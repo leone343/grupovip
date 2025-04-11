@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acesso VIP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #8e2de2, #4a00e0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      background: white;
+      border-radius: 25px;
+      padding: 40px 30px;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      color: #4a00e0;
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1em;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .preco-destaque {
+      display: inline-block;
+      background-color: #ffe100;
+      color: #000;
+      font-size: 1.4em;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 25px;
+    }
+
+    .pix-box {
+      background: #f3f3f3;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 25px;
+      border-left: 6px solid #8e2de2;
+    }
+
+    .pix-key {
+      font-size: 1.1em;
+      font-weight: 600;
+      color: #4a00e0;
+    }
+
+    button {
+      padding: 12px 24px;
+      border: none;
+      background: #4a00e0;
+      color: white;
+      font-size: 1em;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin: 8px;
+    }
+
+    button:hover {
+      background: #3a00c2;
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💎 Acesso VIP</h1>
+
+    <div class="preco-destaque">R$10</div>
+
+    <p>Faça o pagamento via Pix e envie o comprovante para liberar seu acesso exclusivo ao grupo VIP.</p>
+    
+    <div class="pix-box">
+      <p>🔑 Chave Pix:</p>
+      <p class="pix-key" id="pix">pagamentovip10@gmail.com</p>
+      <button onclick="copiarPix()">📋 Copiar chave Pix</button>
+    </div>
+    
+    <button onclick="enviarComprovante()">📩 Enviar comprovante</button>
+
+    <div class="footer">
+      Após a confirmação, você será adicionado ao grupo VIP no Telegram. 🚀
+    </div>
+  </div>
+
+  <script>
+    function copiarPix() {
+      const pix = document.getElementById("pix").innerText;
+      navigator.clipboard.writeText(pix).then(() => {
+        alert("✅ Chave Pix copiada com sucesso!");
+      });
+    }
+
+    function enviarComprovante() {
+      window.open("https://t.me/assinaturavip1", "_blank");
+    }
+  </script>
+</body>
+</html>
+
