@@ -2,8 +2,8 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Desbloqueio VIP 🔥</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conteúdo Exclusivo 🔥</title>
   <style>
     * {
       margin: 0;
@@ -12,13 +12,21 @@
     }
 
     body {
-      background: linear-gradient(to bottom, #1a1a1a, #100010);
+      background: linear-gradient(160deg, #0d0d0d, #1a001a);
       color: #fff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      padding: 30px 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
       animation: fadeIn 1.2s ease-in-out;
     }
 
@@ -27,96 +35,97 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .container {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid #ff2c6d44;
-      border-radius: 20px;
-      padding: 40px 30px;
-      max-width: 420px;
-      width: 90%;
-      text-align: center;
-      box-shadow: 0 0 30px #ff2c6d22;
-      backdrop-filter: blur(8px);
-    }
-
     h1 {
-      font-size: 2em;
-      color: #ff2c6d;
+      color: #ff2e73;
+      font-size: 2.2em;
       margin-bottom: 15px;
     }
 
-    .value {
-      font-size: 1.2em;
+    .instruction {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+      color: #e0e0e0;
+    }
+
+    .step {
+      background: #1f1f1f;
+      border-left: 4px solid #ff2e73;
       margin-bottom: 20px;
-      color: #ffd2e0;
+      padding: 15px;
+      border-radius: 12px;
+      text-align: left;
+      box-shadow: 0 0 10px #ff2e7355;
+    }
+
+    .step strong {
+      color: #ff2e73;
     }
 
     .pix-key {
-      font-size: 1em;
-      background-color: #2a2a2a;
+      background: #333;
       padding: 12px;
       border-radius: 10px;
-      word-break: break-word;
+      font-size: 1em;
+      word-break: break-all;
       margin: 10px 0;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 10px #ff2c6d33; }
-      50% { box-shadow: 0 0 20px #ff2c6d88; }
     }
 
     .copy-btn {
-      background-color: #ff2c6d;
+      background-color: #ff2e73;
       color: white;
       border: none;
-      padding: 12px 25px;
+      padding: 12px 20px;
       border-radius: 8px;
       font-size: 1em;
-      margin-top: 10px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: 0.3s;
     }
 
     .copy-btn:hover {
-      background-color: #d9205a;
+      background-color: #d62260;
     }
 
     .copied-msg {
-      margin-top: 8px;
-      color: #90ee90;
-      display: none;
+      color: #a3ffa3;
       font-size: 0.9em;
+      margin-top: 8px;
+      display: none;
     }
 
     .telegram-link {
-      display: inline-block;
-      margin-top: 30px;
+      display: block;
       background: #26a4e7;
       color: #fff;
-      padding: 12px 25px;
-      border-radius: 8px;
       text-decoration: none;
+      padding: 15px;
+      border-radius: 10px;
       font-weight: bold;
-      font-size: 1em;
+      margin-top: 25px;
+      font-size: 1.1em;
       transition: background 0.3s ease;
     }
 
     .telegram-link:hover {
-      background: #1c8fcf;
+      background: #1b8dce;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Desbloqueie Agora 🔥</h1>
-    <p class="value">Valor: <strong>R$1,00</strong></p>
+    <h1>Conteúdo Exclusivo 🔥</h1>
+    <p class="instruction">Siga as instruções abaixo para liberar o vídeo completo:</p>
 
-    <div id="pixKey" class="pix-key">pagamentovip10@gmail.com</div>
-    <button class="copy-btn" onclick="copyPix()">📋 Copiar Chave PIX</button>
-    <div class="copied-msg" id="copiedMsg">✔️ Chave copiada!</div>
+    <div class="step">
+      <strong>1.</strong> Envie <strong>R$1,00 via PIX</strong> para a chave abaixo:
+      <div id="pixKey" class="pix-key">pagamentovip10@gmail.com</div>
+      <button class="copy-btn" onclick="copyPix()">📋 Copiar Chave PIX</button>
+      <div class="copied-msg" id="copiedMsg">✔️ Chave copiada!</div>
+    </div>
 
-    <a class="telegram-link" href="https://t.me/assine_aqui" target="_blank">📩 Enviar Comprovante</a>
+    <div class="step">
+      <strong>2.</strong> Após o envio, clique no botão abaixo e envie o comprovante:
+      <a class="telegram-link" href="https://t.me/assine_aqui" target="_blank">📩 Enviar Comprovante</a>
+    </div>
   </div>
 
   <script>
