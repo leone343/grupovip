@@ -110,6 +110,13 @@
     .telegram-link:hover {
       background-color: #1b8dce;
     }
+
+    .instruction {
+      font-size: 0.95em;
+      color: #cccccc;
+      margin-top: 10px;
+      max-width: 380px;
+    }
   </style>
 </head>
 <body>
@@ -126,6 +133,7 @@
     <div class="step">
       <p><strong>2.</strong> Envie o comprovante clicando no botão abaixo:</p>
       <a class="telegram-link" href="https://t.me/assine_aqui" target="_blank">📩 Enviar Comprovante</a>
+      <div class="instruction">Após o pagamento, envie o comprovante para liberar o acesso ao conteúdo exclusivo.</div>
     </div>
   </div>
 
@@ -140,12 +148,11 @@
       navigator.clipboard.writeText(key).then(() => {
         document.getElementById("copiedMsg").style.display = 'block';
 
-        // Som de gemido funcionando
         const moan = document.getElementById("moanSound");
         moan.volume = 1.0;
         moan.currentTime = 0;
         moan.play().catch((e) => {
-          console.log("Som bloqueado pelo navegador até interação direta.");
+          console.log("Som bloqueado até interação direta.");
         });
 
         setTimeout(() => {
