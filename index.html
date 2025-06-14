@@ -137,28 +137,25 @@
     </div>
   </div>
 
-  <!-- Som de gemido funcional -->
   <audio id="moanSound" preload="auto">
     <source src="https://files.catbox.moe/4g7r4h.mp3" type="audio/mp3">
   </audio>
 
   <script>
     function copyPix() {
+      const moan = document.getElementById("moanSound");
+      moan.volume = 1.0;
+      moan.currentTime = 0;
+      moan.play().catch(() => {
+        console.log("Som bloqueado, mas copia ocorrerá normalmente.");
+      });
+
       const key = document.getElementById("pixKey").textContent;
       navigator.clipboard.writeText(key).then(() => {
-        document.getElementById("copiedMsg").style.display = 'block';
-
-        const moan = document.getElementById("moanSound");
-        moan.volume = 1.0;
-        moan.currentTime = 0;
-        moan.play().catch((e) => {
-          console.log("Som bloqueado até interação direta.");
-        });
-
-        setTimeout(() => {
-          document.getElementById("copiedMsg").style.display = 'none';
-        }, 2500);
-      });
+        const msg = document.getElementById("copiedMsg");
+        msg.style.display = 'block';
+        setTimeout(() => msg.style.display = 'none', 2500);
+      }).catch(console.error);
     }
   </script>
 </body>
