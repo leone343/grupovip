@@ -3,93 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Compre Vídeos VIP por R$1</title>
+  <title>Pagamento R$1</title>
   <style>
     body {
+      background: #1b1b1b;
+      color: #fff;
       font-family: Arial, sans-serif;
-      background: #121212;
-      color: #eee;
-      margin: 0;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    header {
       text-align: center;
-      margin-bottom: 25px;
+      padding: 30px 15px;
+    }
+    .box {
+      background-color: #2c2c2c;
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 500px;
+      margin: 0 auto;
+      box-shadow: 0 0 20px #ff336650;
     }
     h1 {
       color: #ff3366;
-    }
-    video {
-      max-width: 100%;
-      border-radius: 10px;
       margin-bottom: 20px;
-      box-shadow: 0 0 15px #ff3366;
     }
-    .info {
-      max-width: 500px;
-      background: #222;
-      padding: 15px;
+    .pix-key {
+      font-size: 1.2em;
+      background-color: #333;
+      padding: 10px;
       border-radius: 8px;
-      box-shadow: 0 0 10px #ff3366;
-      margin-bottom: 20px;
+      margin: 15px 0;
+      display: inline-block;
+      word-break: break-word;
     }
-    .pix {
-      font-weight: bold;
-      color: #ff6699;
-      font-size: 1.1em;
-      margin: 10px 0;
+    button.copy-btn {
+      background-color: #ff3366;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+    button.copy-btn:hover {
+      background-color: #cc2955;
+    }
+    .copied-msg {
+      display: none;
+      color: #90ee90;
+      font-size: 0.95em;
+      margin-top: 8px;
     }
     a.telegram-link {
       display: inline-block;
-      background: #ff3366;
+      margin-top: 20px;
+      text-decoration: none;
       color: white;
+      background: #26a4e7;
       padding: 12px 20px;
       border-radius: 8px;
-      text-decoration: none;
       font-weight: bold;
-      transition: background-color 0.3s ease;
-      margin-top: 15px;
+      transition: background 0.3s ease;
     }
     a.telegram-link:hover {
-      background: #cc2a58;
-    }
-    footer {
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #888;
-      text-align: center;
+      background: #1d90cc;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Vídeos VIP Exclusivos por R$1</h1>
-  <p>Assista a prévia gratuita abaixo e compre o vídeo completo por apenas R$1!</p>
-</header>
+  <div class="box">
+    <h1>Pagamento R$1</h1>
+    <p>Chave PIX:</p>
+    <div id="pixKey" class="pix-key">pagamentovip10@gmail.com</div>
+    <button class="copy-btn" onclick="copyPix()">📋 Copiar Chave PIX</button>
+    <div class="copied-msg" id="copiedMsg">✔️ Chave copiada!</div>
 
-<video controls poster="thumbnail.jpg">
-  <source src="preview.mp4" type="video/mp4" />
-  Seu navegador não suporta vídeo HTML5.
-</video>
+    <p>Envie o comprovante no Telegram:</p>
+    <a class="telegram-link" href="https://t.me/assine_aqui" target="_blank">📩 Enviar Comprovante</a>
+  </div>
 
-<div class="info">
-  <p><strong>Como comprar:</strong></p>
-  <ol>
-    <li>Faça um PIX de <span class="pix">R$1,00</span> para a chave: <br /><code>pagamentovip10@gmail.com</code></li>
-    <li>Envie o comprovante para o nosso Telegram no link abaixo.</li>
-    <li>Após confirmação, enviaremos o vídeo completo para você no Telegram.</li>
-  </ol>
-  <p>Garantia de atendimento rápido e seguro!</p>
-  <a href="https://t.me/assine_aqui" target="_blank" class="telegram-link">Enviar comprovante no Telegram</a>
-</div>
-
-<footer>
-  <p>© 2025 Vídeos VIP | Contato: <a href="https://t.me/assine_aqui" target="_blank">@assine_aqui</a></p>
-</footer>
+  <script>
+    function copyPix() {
+      const key = document.getElementById("pixKey").textContent;
+      navigator.clipboard.writeText(key).then(() => {
+        document.getElementById("copiedMsg").style.display = 'block';
+        setTimeout(() => {
+          document.getElementById("copiedMsg").style.display = 'none';
+        }, 2000);
+      });
+    }
+  </script>
 
 </body>
 </html>
