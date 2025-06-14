@@ -15,20 +15,22 @@
     html, body {
       height: 100%;
       font-family: 'Poppins', sans-serif;
-      background: #f1f1f1;
+      background: linear-gradient(135deg, #1e002e, #3b005e);
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 20px;
+      color: #fff;
     }
 
     .container {
-      background-color: #fff;
       width: 100%;
       max-width: 420px;
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(15px);
       padding: 30px 25px;
       border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
       text-align: center;
       animation: fadeIn 1s ease;
     }
@@ -36,51 +38,54 @@
     h1 {
       font-size: 2.3em;
       margin-bottom: 10px;
-      color: #111;
+      color: #ff4dd2;
     }
 
     .valor {
       font-size: 2em;
       font-weight: bold;
-      color: #ff0066;
+      color: #fff;
       margin: 20px 0;
-      background: #111;
+      background: linear-gradient(to right, #ff4dd2, #ff0066);
       padding: 12px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #ff006655;
-      animation: glow 2s infinite ease-in-out;
+      border-radius: 15px;
+      animation: pulse 2s infinite;
+      box-shadow: 0 0 20px #ff4dd277;
     }
 
     p {
       font-size: 1.05em;
-      color: #444;
       margin-bottom: 18px;
+      color: #eee;
     }
 
     button {
-      background: linear-gradient(to right, #111, #222);
-      color: #ff0066;
+      background: linear-gradient(to right, #ff4dd2, #ff0066);
+      color: white;
       border: none;
-      padding: 15px;
+      padding: 14px;
       font-size: 1.05em;
       font-weight: bold;
       border-radius: 12px;
       cursor: pointer;
       width: 100%;
       margin: 10px 0;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(255, 0, 127, 0.4);
+      transition: transform 0.2s ease;
     }
 
     button:hover {
       transform: scale(1.03);
-      background: linear-gradient(to right, #000, #111);
     }
 
     .copy-success {
       margin-top: 10px;
-      color: #00aa00;
+      color: #80ffb2;
       font-weight: bold;
+    }
+
+    a {
+      text-decoration: none;
     }
 
     @keyframes fadeIn {
@@ -88,13 +93,9 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes glow {
-      0%, 100% { box-shadow: 0 0 12px #ff0066aa; }
-      50% { box-shadow: 0 0 25px #ff0066cc; }
-    }
-
-    a {
-      text-decoration: none;
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
     }
   </style>
 </head>
@@ -102,12 +103,12 @@
   <div class="container">
     <h1>ACESSO VIP 🔥</h1>
     <div class="valor">Apenas R$10</div>
-    <p>Faça o pagamento via Pix para a chave abaixo e desbloqueie o conteúdo exclusivo.</p>
+    <p>Faça o pagamento via Pix e desbloqueie o conteúdo exclusivo agora mesmo.</p>
     <button onclick="copiarPix()">📋 Copiar chave Pix</button>
     <div id="msg" class="copy-success"></div>
-    <p>Chave Pix:</p>
+    <p style="margin-top: 12px;">Chave Pix:</p>
     <p><b>pagamentovip10@gmail.com</b></p>
-    <p>Depois do pagamento, envie o comprovante clicando abaixo:</p>
+    <p>Depois do pagamento, envie o comprovante clicando no botão abaixo:</p>
     <a href="https://t.me/assine_aqui" target="_blank">
       <button>📤 Enviar comprovante</button>
     </a>
