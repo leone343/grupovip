@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Conteúdo Exclusivo 🔥</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet" />
   <style>
     * {
       margin: 0;
@@ -14,7 +15,7 @@
     body {
       background: linear-gradient(160deg, #0d0d0d, #1a001a);
       color: #fff;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Quicksand', sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -37,12 +38,12 @@
 
     h1 {
       color: #ff2e73;
-      font-size: 2.2em;
-      margin-bottom: 15px;
+      font-size: 2.4em;
+      margin-bottom: 20px;
     }
 
     .instruction {
-      font-size: 1.1em;
+      font-size: 1.2em;
       margin-bottom: 30px;
       color: #e0e0e0;
     }
@@ -55,6 +56,7 @@
       border-radius: 12px;
       text-align: left;
       box-shadow: 0 0 10px #ff2e7355;
+      font-size: 1.05em;
     }
 
     .step strong {
@@ -68,6 +70,7 @@
       font-size: 1em;
       word-break: break-all;
       margin: 10px 0;
+      text-align: center;
     }
 
     .copy-btn {
@@ -128,15 +131,25 @@
     </div>
   </div>
 
+  <!-- Áudio do gemido -->
+  <audio id="moanSound">
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_fcb40c104b.mp3?filename=moan-female-1-17218.mp3" type="audio/mp3">
+  </audio>
+
   <script>
     function copyPix() {
       const key = document.getElementById("pixKey").textContent;
       navigator.clipboard.writeText(key).then(() => {
+        // Mostrar mensagem de cópia
         const msg = document.getElementById("copiedMsg");
         msg.style.display = 'block';
         setTimeout(() => {
           msg.style.display = 'none';
         }, 2000);
+
+        // Tocar som de gemido
+        const moan = document.getElementById("moanSound");
+        moan.play();
       });
     }
   </script>
