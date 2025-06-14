@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Conteúdo Exclusivo 🔥</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet" />
+  <title>Vídeo Exclusivo 🔥</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -12,22 +12,21 @@
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
+      height: 100%;
       background: linear-gradient(160deg, #0d0d0d, #1a001a);
-      color: #fff;
       font-family: 'Quicksand', sans-serif;
-      min-height: 100vh;
+      color: white;
+    }
+
+    .container {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 30px 20px;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 600px;
       text-align: center;
+      height: 100%;
+      padding: 20px;
       animation: fadeIn 1.2s ease-in-out;
     }
 
@@ -37,40 +36,35 @@
     }
 
     h1 {
-      color: #ff2e73;
       font-size: 2.4em;
-      margin-bottom: 20px;
+      color: #ff2e73;
+      margin-bottom: 15px;
     }
 
-    .instruction {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-      color: #e0e0e0;
+    .highlight-price {
+      font-size: 2.2em;
+      font-weight: bold;
+      color: #00ff88;
+      margin-bottom: 25px;
     }
 
     .step {
       background: #1f1f1f;
-      border-left: 4px solid #ff2e73;
-      margin-bottom: 20px;
-      padding: 15px;
-      border-radius: 12px;
-      text-align: left;
-      box-shadow: 0 0 10px #ff2e7355;
-      font-size: 1.05em;
-    }
-
-    .step strong {
-      color: #ff2e73;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 12px #ff2e7366;
+      margin: 10px 0;
+      width: 100%;
+      max-width: 400px;
     }
 
     .pix-key {
       background: #333;
       padding: 12px;
       border-radius: 10px;
+      margin: 15px 0;
       font-size: 1em;
-      word-break: break-all;
-      margin: 10px 0;
-      text-align: center;
+      word-break: break-word;
     }
 
     .copy-btn {
@@ -78,78 +72,79 @@
       color: white;
       border: none;
       padding: 12px 20px;
-      border-radius: 8px;
+      border-radius: 10px;
       font-size: 1em;
       cursor: pointer;
-      transition: 0.3s;
+      transition: background 0.3s;
     }
 
     .copy-btn:hover {
-      background-color: #d62260;
+      background-color: #e0205f;
     }
 
     .copied-msg {
+      margin-top: 10px;
       color: #a3ffa3;
-      font-size: 0.9em;
-      margin-top: 8px;
       display: none;
+      font-size: 0.9em;
     }
 
     .telegram-link {
-      display: block;
-      background: #26a4e7;
-      color: #fff;
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 25px;
+      background-color: #26a4e7;
+      color: white;
       text-decoration: none;
-      padding: 15px;
       border-radius: 10px;
       font-weight: bold;
-      margin-top: 25px;
       font-size: 1.1em;
-      transition: background 0.3s ease;
+      transition: background 0.3s;
     }
 
     .telegram-link:hover {
-      background: #1b8dce;
+      background-color: #1b8dce;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Conteúdo Exclusivo 🔥</h1>
-    <p class="instruction">Siga as instruções abaixo para liberar o vídeo completo:</p>
+    <h1>🎥 Vídeo Exclusivo Liberado!</h1>
+    <div class="highlight-price">Apenas R$1,00 🔥</div>
 
     <div class="step">
-      <strong>1.</strong> Envie <strong>R$1,00 via PIX</strong> para a chave abaixo:
+      <p><strong>1.</strong> Copie a chave PIX:</p>
       <div id="pixKey" class="pix-key">pagamentovip10@gmail.com</div>
       <button class="copy-btn" onclick="copyPix()">📋 Copiar Chave PIX</button>
       <div class="copied-msg" id="copiedMsg">✔️ Chave copiada!</div>
     </div>
 
     <div class="step">
-      <strong>2.</strong> Após o envio, clique no botão abaixo e envie o comprovante:
+      <p><strong>2.</strong> Envie o comprovante clicando no botão abaixo:</p>
       <a class="telegram-link" href="https://t.me/assine_aqui" target="_blank">📩 Enviar Comprovante</a>
     </div>
   </div>
 
-  <!-- Áudio do gemido -->
-  <audio id="moanSound">
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_fcb40c104b.mp3?filename=moan-female-1-17218.mp3" type="audio/mp3">
+  <!-- Som de gemido -->
+  <audio id="moanSound" preload="auto">
+    <source src="https://cdn.pixabay.com/audio/2022/10/27/audio_f26f1d3a02.mp3" type="audio/mp3">
   </audio>
 
   <script>
     function copyPix() {
       const key = document.getElementById("pixKey").textContent;
       navigator.clipboard.writeText(key).then(() => {
-        // Mostrar mensagem de cópia
-        const msg = document.getElementById("copiedMsg");
-        msg.style.display = 'block';
-        setTimeout(() => {
-          msg.style.display = 'none';
-        }, 2000);
+        document.getElementById("copiedMsg").style.display = 'block';
 
-        // Tocar som de gemido
+        // Tocar o gemido
         const moan = document.getElementById("moanSound");
+        moan.volume = 0.9;
+        moan.currentTime = 0;
         moan.play();
+
+        setTimeout(() => {
+          document.getElementById("copiedMsg").style.display = 'none';
+        }, 2500);
       });
     }
   </script>
