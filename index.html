@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Acesso VIP 🔞</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -14,82 +14,89 @@
 
     html, body {
       height: 100%;
-      font-family: 'Inter', sans-serif;
-      background-color: #fff;
-      color: #111;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #ffffff, #f2f2f2);
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 20px;
+      overflow: hidden;
     }
 
     .container {
+      background-color: #fff;
       width: 100%;
-      max-width: 400px;
-      background-color: #f9f9f9;
-      padding: 30px 20px;
+      max-width: 420px;
+      padding: 30px 25px;
       border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
       text-align: center;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-      animation: fadeIn 1s ease-in;
+      animation: fadeIn 1s ease;
     }
 
     h1 {
-      font-size: 2.2em;
+      font-size: 2.3em;
       margin-bottom: 10px;
+      color: #111;
     }
 
     .valor {
-      font-size: 1.8em;
+      font-size: 2em;
       color: #ff007f;
-      font-weight: bold;
-      margin: 15px 0 25px;
-      background: #ffe6f0;
-      padding: 10px;
-      border-radius: 12px;
-      animation: pulse 2s infinite;
+      font-weight: 600;
+      margin: 20px 0;
+      background: linear-gradient(to right, #ff66a3, #ff007f);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(255, 0, 127, 0.3);
+      animation: glow 2s infinite ease-in-out;
     }
 
     p {
       font-size: 1.05em;
+      color: #444;
       margin-bottom: 20px;
     }
 
     button {
-      background-color: #ff007f;
+      background: linear-gradient(135deg, #ff007f, #e60073);
       color: white;
       border: none;
-      padding: 14px;
+      padding: 15px;
       font-size: 1.05em;
-      font-weight: bold;
+      font-weight: 600;
       border-radius: 12px;
       cursor: pointer;
       width: 100%;
       margin: 8px 0;
-      box-shadow: 0 4px 12px rgba(255, 0, 127, 0.4);
-      transition: transform 0.2s ease, background 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 0, 127, 0.3);
+      transition: all 0.3s ease;
     }
 
     button:hover {
-      background-color: #e60073;
-      transform: scale(1.02);
+      transform: scale(1.03);
+      box-shadow: 0 6px 20px rgba(255, 0, 127, 0.4);
     }
 
     .copy-success {
-      margin-top: 10px;
+      margin-top: 12px;
       color: #00aa00;
       font-weight: bold;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.03); }
-      100% { transform: scale(1); }
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 10px rgba(255, 0, 127, 0.5); }
+      50% { box-shadow: 0 0 25px rgba(255, 0, 127, 0.7); }
+    }
+
+    a {
+      text-decoration: none;
     }
   </style>
 </head>
@@ -97,11 +104,12 @@
   <div class="container">
     <h1>ACESSO VIP 🔥</h1>
     <div class="valor">Apenas R$10</div>
-    <p>Envie o valor via Pix para a chave abaixo e receba acesso exclusivo.</p>
+    <p>Faça o pagamento via Pix e tenha acesso imediato ao conteúdo exclusivo.</p>
     <button onclick="copiarPix()">📋 Copiar chave Pix</button>
     <div id="msg" class="copy-success"></div>
-    <p>Chave Pix: <b>pagamentovip10@gmail.com</b></p>
-    <p>Após o pagamento, <b>envie o comprovante</b> clicando abaixo:</p>
+    <p style="margin-top: 15px;">Chave Pix:</p>
+    <p><b>pagamentovip10@gmail.com</b></p>
+    <p>Depois de pagar, envie o comprovante clicando no botão abaixo:</p>
     <a href="https://t.me/assine_aqui" target="_blank">
       <button>📤 Enviar comprovante</button>
     </a>
