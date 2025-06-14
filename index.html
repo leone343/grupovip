@@ -1,175 +1,165 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Grupo VIP 🔥 Conteúdo +18 Exclusivo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
-    }
+      scroll-behavior: smooth;
+    }body {
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+  background-color: #0e0e0e;
+  color: #f0f0f0;
+}
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f7f7f7;
-      color: #222;
-    }
+header {
+  background: linear-gradient(135deg, #ff004c, #ff6a00);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  animation: fadeInDown 1s ease-out;
+}
 
-    header {
-      background-color: #ff004c;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-    }
+header h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
 
-    header h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
+header p {
+  font-size: 20px;
+  opacity: 0.9;
+}
 
-    header p {
-      font-size: 18px;
-    }
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 30px 20px;
-    }
+.section {
+  margin-bottom: 50px;
+  animation: fadeInUp 1.2s ease;
+}
 
-    .section {
-      margin-bottom: 40px;
-    }
+.section h2 {
+  color: #ff4c6a;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
 
-    .section h2 {
-      color: #ff004c;
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
+.section ul {
+  padding-left: 20px;
+  font-size: 18px;
+  line-height: 1.8;
+}
 
-    .section ul {
-      padding-left: 20px;
-      font-size: 18px;
-    }
+.cta-button {
+  background: linear-gradient(135deg, #ff004c, #ff6a00);
+  color: #fff;
+  font-size: 22px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+  text-decoration: none;
+  display: block;
+  margin-top: 25px;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 76, 106, 0.4);
+}
 
-    .cta-button {
-      background-color: #ff004c;
-      color: #fff;
-      font-size: 20px;
-      padding: 18px;
-      text-align: center;
-      border-radius: 10px;
-      text-decoration: none;
-      display: block;
-      margin-top: 20px;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 76, 106, 0.6);
+}
 
-    .cta-button:hover {
-      background-color: #e60040;
-    }
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
 
-    .testimonials {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+.testimonial {
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+}
 
-    .testimonial {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #ccc;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
+.testimonial img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ff004c;
+}
 
-    .testimonial img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
+.testimonial p {
+  margin: 0;
+  font-size: 16px;
+}
 
-    .testimonial p {
-      margin: 0;
-    }
+.warning {
+  text-align: center;
+  color: #ffcc00;
+  font-size: 14px;
+  margin-top: 40px;
+}
 
-    .warning {
-      text-align: center;
-      color: #c00;
-      font-size: 14px;
-      margin-top: 40px;
-    }
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-top: 60px;
+  padding: 30px 20px;
+}
 
-    footer {
-      text-align: center;
-      font-size: 14px;
-      color: #777;
-      margin-top: 40px;
-      padding: 20px;
-    }
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
   </style>
 </head>
-<body>
-
-<header>
-  <h1>🔥 ENTRE PARA O GRUPO VIP +18</h1>
-  <p>Conteúdo 100% explícito, atualizado diariamente, e sem censura. Só R$10.</p>
-</header>
-
-<div class="container">
+<body><header>
+  <h1>🔥 GRUPO VIP EXCLUSIVO +18</h1>
+  <p>Conteúdo 100% BRASILEIRO, EXPLÍCITO, e sem censura. Só R$10.</p>
+</header><div class="container">
   <div class="section">
-    <h2>🚀 O que você vai receber:</h2>
+    <h2>O que você vai receber:</h2>
     <ul>
-      <li>🔞 Vídeos 100% explícitos, reais e brasileiros</li>
-      <li>🔥 Amadoras, novinhas, casadas e vídeos de WhatsApp</li>
-      <li>📱 Atualizações todos os dias, sem conteúdo repetido</li>
-      <li>💰 Pagamento único: só R$10 (acesso vitalício)</li>
-      <li>🔒 Discrição total: ninguém vê que você entrou</li>
+      <li>🔞 Conteúdo real, amador e BR - sem frescura</li>
+      <li>📲 Atualizações diárias direto no seu Telegram</li>
+      <li>💰 Pagamento único: apenas R$10 (acesso vitalício)</li>
+      <li>🕶 Anonimato garantido: ninguém vê que você entrou</li>
     </ul>
-    <a href="https://seulinkdepagamento.com" class="cta-button">👉 QUERO ENTRAR AGORA NO GRUPO VIP</a>
-  </div>
-
-  <div class="section">
-    <h2>📢 O que dizem os membros:</h2>
+    <a href="https://seulinkdepagamento.com" class="cta-button">🚀 QUERO ENTRAR AGORA</a>
+  </div>  <div class="section">
+    <h2>O que dizem nossos membros:</h2>
     <div class="testimonials">
       <div class="testimonial">
-        <img src="https://source.unsplash.com/60x60/?man,face" alt="Depoimento 1">
-        <p>"Entrei com o pé atrás, mas mano... é só vídeo pesado mesmo. Conteúdo raiz, sem frescura." – <strong>André, 28</strong></p>
-      </div>
-      <div class="testimonial">
-        <img src="https://source.unsplash.com/60x60/?male,profile" alt="Depoimento 2">
-        <p>"Paguei R$10 achando que era furada. Hoje vejo mais vídeo aqui que no Xvideos kkk" – <strong>Leonardo, 25</strong></p>
-      </div>
-      <div class="testimonial">
-        <img src="https://source.unsplash.com/60x60/?young,man" alt="Depoimento 3">
-        <p>"Só conteúdo nacional, vídeos que não tem nem no X... valeu cada centavo!" – <strong>Lucas, 22</strong></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>📦 Como funciona?</h2>
-    <ul>
-      <li>1️⃣ Clique no botão e pague via Pix, cartão ou boleto</li>
-      <li>2️⃣ Após o pagamento, você recebe o link para entrar no grupo VIP</li>
-      <li>3️⃣ Aproveite o melhor da putaria BR, com total sigilo</li>
-    </ul>
-    <a href="https://seulinkdepagamento.com" class="cta-button">✅ GARANTIR MEU ACESSO AGORA</a>
-  </div>
-
-  <div class="warning">
-    ⚠️ Conteúdo exclusivo para maiores de 18 anos. Acesso é individual e sigiloso. Evite compartilhar o link após entrar.
-  </div>
-</div>
-
-<footer>
-  © 2025 - Grupo VIP Telegram | Todos os direitos reservados.
-</footer>
-
-</body>
-</html>
+        <img src="https://source.unsplash.com/60x60/?man,face" alt="user">
+        <p>"Melhor grupo que entrei na vida. Sem enrolação, só metendo mesmo!" – <strong>Rodrigo, 
