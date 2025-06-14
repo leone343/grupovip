@@ -1,237 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<title>Pagamento Grupo VIP Telegram</title>
-<style>
-  /* Reset básico */
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-
-  html, body {
-    height: 100%;
-    background: linear-gradient(135deg, #6b0f1a, #b91372);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-
-  body {
-    animation: fadeInBackground 1.2s ease forwards;
-  }
-
-  @keyframes fadeInBackground {
-    0% {background: #000;}
-    100% {background: linear-gradient(135deg, #6b0f1a, #b91372);}
-  }
-
-  .container {
-    width: 100vw;
-    height: 100vh;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    animation: fadeInContent 1s ease 0.5s forwards;
-    opacity: 0;
-  }
-
-  @keyframes fadeInContent {
-    to {opacity: 1;}
-  }
-
-  h1 {
-    font-size: 3.5rem;
-    margin-bottom: 5px;
-    font-weight: 900;
-    text-shadow: 0 0 10px #fff8;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-    margin-bottom: 40px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-shadow: 0 0 8px #fff5;
-  }
-
-  .price {
-    font-size: 5rem;
-    font-weight: 900;
-    margin-bottom: 60px;
-    color: #ffdd00;
-    text-shadow: 0 0 20px #ffdd00aa;
-  }
-
-  .btn {
-    background-color: #ff3366;
-    border: none;
-    padding: 20px 0;
-    width: 80%;
-    max-width: 350px;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: white;
-    border-radius: 50px;
-    cursor: pointer;
-    margin: 15px 0;
-    box-shadow: 0 6px 12px #ff3366aa;
-    transition: all 0.3s ease;
-    user-select: none;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .btn:hover {
-    background-color: #ff0044;
-    box-shadow: 0 8px 20px #ff0044cc;
-  }
-
-  .btn:active {
-    transform: scale(0.96);
-    box-shadow: 0 4px 8px #ff0044cc;
-  }
-
-  .btn:focus {
-    outline: none;
-  }
-
-  /* Ripple Effect */
-  .btn.ripple {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .btn.ripple::after {
-    content: "";
-    position: absolute;
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 50%;
-    transform: scale(0);
-    opacity: 0;
-    pointer-events: none;
-    animation: ripple 0.6s linear;
-  }
-
-  @keyframes ripple {
-    to {
-      transform: scale(4);
-      opacity: 0;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pagamento VIP 🔞</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-  }
 
-  .info-text {
-    margin-top: 40px;
-    font-size: 1.2rem;
-    color: #fff9;
-    max-width: 400px;
-    line-height: 1.5;
-    user-select: none;
-  }
+    body {
+      background: url('https://i.imgur.com/YOUR_IMAGE.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-  /* Mobile optimization */
-  @media (max-width: 480px) {
+    .container {
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 20px;
+      border-radius: 20px;
+    }
+
     h1 {
-      font-size: 2.8rem;
+      font-size: 2.5em;
+      margin-bottom: 20px;
     }
-    .price {
-      font-size: 4rem;
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
     }
-    .btn {
-      font-size: 1.5rem;
-      padding: 18px 0;
-      max-width: 280px;
+
+    button {
+      padding: 15px 20px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1em;
+      font-weight: bold;
+      background-color: #ff007f;
+      color: white;
+      cursor: pointer;
+      width: 100%;
     }
-  }
-</style>
+
+    button:hover {
+      background-color: #e60073;
+    }
+
+    .copy-success {
+      margin-top: 10px;
+      color: #00ff00;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>Grupo VIP Telegram</h1>
-    <h2>Assine agora e tenha acesso exclusivo</h2>
-    <div class="price">R$ 10,00</div>
-
-    <button class="btn ripple" id="copyPixBtn" aria-label="Copiar chave Pix">
-      Copiar chave Pix: pagamentovip10@gmail.com
-    </button>
-
-    <button class="btn ripple" id="sendProofBtn" aria-label="Enviar comprovante no Telegram">
-      Enviar comprovante no Telegram
-    </button>
-
-    <div class="info-text">
-      1. Clique em "Copiar chave Pix" e faça o pagamento.<br />
-      2. Depois clique em "Enviar comprovante" para enviar seu comprovante via Telegram.<br />
-      3. Aguarde a aprovação e aproveite o conteúdo VIP!
-    </div>
+    <h1>ACESSO VIP 🔥</h1>
+    <p>Envie R$1 via Pix para a chave abaixo e tenha acesso ao conteúdo exclusivo.</p>
+    <button onclick="copiarPix()">📋 Copiar chave Pix</button>
+    <div id="msg" class="copy-success"></div>
+    <p>Chave Pix: <b>pagamentovip10@gmail.com</b></p>
+    <p>Após o pagamento, <b>envie o comprovante</b> pelo botão abaixo:</p>
+    <a href="https://t.me/assine_aqui" target="_blank">
+      <button>📤 Enviar comprovante</button>
+    </a>
   </div>
 
-<script>
-  // Função ripple efeito no clique
-  function createRipple(event) {
-    const button = event.currentTarget;
+  <audio id="gemido" src="https://www.myinstants.com/media/sounds/gemidao-whatsapp.mp3"></audio>
 
-    const circle = document.createElement("span");
-    circle.style.width = circle.style.height = Math.max(button.clientWidth, button.clientHeight) + 'px';
-
-    const rect = button.getBoundingClientRect();
-    circle.style.left = event.clientX - rect.left - circle.offsetWidth / 2 + 'px';
-    circle.style.top = event.clientY - rect.top - circle.offsetHeight / 2 + 'px';
-    circle.classList.add("ripple-effect");
-
-    button.appendChild(circle);
-
-    setTimeout(() => {
-      circle.remove();
-    }, 600);
-  }
-
-  // Ripple CSS class
-  const rippleStyle = document.createElement('style');
-  rippleStyle.textContent = `
-    .ripple-effect {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.5);
-      animation: ripple 0.6s linear;
-      transform: scale(0);
-      pointer-events: none;
-      opacity: 1;
-      z-index: 10;
-      will-change: transform, opacity;
+  <script>
+    function copiarPix() {
+      navigator.clipboard.writeText("pagamentovip10@gmail.com").then(() => {
+        document.getElementById("msg").innerText = "Chave Pix copiada com sucesso!";
+        document.getElementById("gemido").play();
+      });
     }
-  `;
-  document.head.appendChild(rippleStyle);
-
-  // Copiar chave Pix
-  const copyPixBtn = document.getElementById('copyPixBtn');
-  copyPixBtn.addEventListener('click', (e) => {
-    // Copy text
-    navigator.clipboard.writeText('pagamentovip10@gmail.com').then(() => {
-      alert('Chave Pix copiada para a área de transferência!');
-    }).catch(() => {
-      alert('Não foi possível copiar a chave Pix. Copie manualmente: pagamentovip10@gmail.com');
-    });
-
-    // Ripple effect
-    createRipple(e);
-  });
-
-  // Abrir link Telegram
-  const sendProofBtn = document.getElementById('sendProofBtn');
-  sendProofBtn.addEventListener('click', (e) => {
-    window.open('https://t.me/assine_aqui', '_blank');
-
-    // Ripple effect
-    createRipple(e);
-  });
-</script>
+  </script>
 </body>
 </html>
