@@ -1,124 +1,96 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Acesso VIP 🔞</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grupo VIP 🔞</title>
   <style>
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #1e002e, #3b005e);
+      background: linear-gradient(to bottom, #000000, #330000);
+      color: white;
+      font-family: 'Arial Black', sans-serif;
+      text-align: center;
       display: flex;
+      flex-direction: column;
       justify-content: center;
-      align-items: center;
+      min-height: 100vh;
       padding: 20px;
-      color: #fff;
     }
 
     .container {
-      width: 100%;
-      max-width: 420px;
-      background: rgba(255, 255, 255, 0.07);
-      backdrop-filter: blur(15px);
-      padding: 30px 25px;
-      border-radius: 20px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-      text-align: center;
-      animation: fadeIn 1s ease;
+      max-width: 500px;
+      margin: auto;
     }
 
     h1 {
-      font-size: 2.5em;
-      margin-bottom: 15px;
-      color: #ff4dd2;
+      font-size: 2.2em;
+      color: #FF3E3E;
+      margin-bottom: 20px;
     }
 
-    .valor {
-      font-size: 2.5em;
-      font-weight: bold;
-      color: #ff4dd2;
-      margin: 15px 0 25px;
-      animation: blink 1s infinite;
+    .highlight {
+      color: #FFD700;
+      font-size: 1.6em;
+      margin: 15px 0;
     }
 
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
-    }
-
-    p {
-      font-size: 1.1em;
-      color: #eee;
-      margin-bottom: 18px;
-    }
-
-    button {
-      background: linear-gradient(to right, #ff4dd2, #ff0066);
-      color: white;
-      border: none;
-      padding: 18px;
+    .list {
       font-size: 1.2em;
+      line-height: 1.8em;
+      margin: 20px 0;
+    }
+
+    .cta {
+      margin-top: 30px;
+      background: #FF3E3E;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 1.5em;
+      color: white;
       font-weight: bold;
-      border-radius: 14px;
-      cursor: pointer;
-      width: 100%;
-      margin: 12px 0;
-      box-shadow: 0 8px 22px rgba(255, 0, 127, 0.5);
-      transition: transform 0.2s ease;
+      animation: piscar 1s infinite alternate;
     }
 
-    button:hover {
-      transform: scale(1.04);
+    @keyframes piscar {
+      from { opacity: 1; }
+      to { opacity: 0.5; }
     }
 
-    .copy-success {
+    .link {
       margin-top: 10px;
-      color: #80ffb2;
-      font-weight: bold;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      font-size: 1.2em;
+      word-wrap: break-word;
+      background: #222;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #FF3E3E;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>ACESSO VIP 🔥</h1>
-    <div class="valor">R$ 10,00</div>
-    <p>Faça o pagamento via Pix para a chave abaixo e libere seu conteúdo exclusivo.</p>
-    <button onclick="copiarPix()">📋 Copiar chave Pix</button>
-    <div id="msg" class="copy-success"></div>
-    <p style="margin-top: 12px;">Chave Pix:</p>
-    <p><b>pagamentovip10@gmail.com</b></p>
-    <p>Após o pagamento, envie o comprovante clicando abaixo:</p>
-    <a href="https://t.me/assine_aqui" target="_blank">
-      <button>📤 Enviar comprovante</button>
-    </a>
+    <h1>🔥 VOCÊ AINDA PAGA POR VÍDEO ADULTO?</h1>
+    <div class="highlight">💣 ENTRE NO GRUPO VIP MAIS COMPLETO DO TELEGRAM!</div>
+
+    <div class="list">
+      ✅ OnlyFans<br>
+      ✅ Privacy<br>
+      ✅ Brazzers<br>
+      ✅ MYM<br>
+      ✅ Tufos<br>
+      ✅ Packs raros<br>
+      ✅ Câmeras ao vivo<br>
+      ✅ E MUITO MAIS!
+    </div>
+
+    <div class="highlight">💥 Conteúdo de TODAS as plataformas pagas em UM SÓ GRUPO!</div>
+
+    <div class="highlight">💸 Pague uma vez e tenha acesso VIP completo!</div>
+
+    <div class="cta">🔞 ACESSE AGORA MESMO</div>
+    <div class="link">👉 t.me/assine_aqui</div>
   </div>
-
-  <audio id="gemido" src="https://www.myinstants.com/media/sounds/gemidao-whatsapp.mp3"></audio>
-
-  <script>
-    function copiarPix() {
-      navigator.clipboard.writeText("pagamentovip10@gmail.com").then(() => {
-        document.getElementById("msg").innerText = "Chave Pix copiada com sucesso!";
-        document.getElementById("gemido").play();
-      });
-    }
-  </script>
 </body>
 </html>
