@@ -3,82 +3,119 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pagamento R$1</title>
+  <title>Desbloqueio VIP 🔥</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      background: #1b1b1b;
+      background: linear-gradient(to bottom, #1a1a1a, #100010);
       color: #fff;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #ff2c6d44;
+      border-radius: 20px;
+      padding: 40px 30px;
+      max-width: 420px;
+      width: 90%;
       text-align: center;
-      padding: 30px 15px;
+      box-shadow: 0 0 30px #ff2c6d22;
+      backdrop-filter: blur(8px);
     }
-    .box {
-      background-color: #2c2c2c;
-      padding: 20px;
-      border-radius: 15px;
-      max-width: 500px;
-      margin: 0 auto;
-      box-shadow: 0 0 20px #ff336650;
-    }
+
     h1 {
-      color: #ff3366;
-      margin-bottom: 20px;
+      font-size: 2em;
+      color: #ff2c6d;
+      margin-bottom: 15px;
     }
-    .pix-key {
+
+    .value {
       font-size: 1.2em;
-      background-color: #333;
-      padding: 10px;
-      border-radius: 8px;
-      margin: 15px 0;
-      display: inline-block;
-      word-break: break-word;
+      margin-bottom: 20px;
+      color: #ffd2e0;
     }
-    button.copy-btn {
-      background-color: #ff3366;
+
+    .pix-key {
+      font-size: 1em;
+      background-color: #2a2a2a;
+      padding: 12px;
+      border-radius: 10px;
+      word-break: break-word;
+      margin: 10px 0;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 10px #ff2c6d33; }
+      50% { box-shadow: 0 0 20px #ff2c6d88; }
+    }
+
+    .copy-btn {
+      background-color: #ff2c6d;
       color: white;
       border: none;
-      padding: 12px 20px;
+      padding: 12px 25px;
       border-radius: 8px;
       font-size: 1em;
-      cursor: pointer;
       margin-top: 10px;
-      transition: 0.3s;
-    }
-    button.copy-btn:hover {
-      background-color: #cc2955;
-    }
-    .copied-msg {
-      display: none;
-      color: #90ee90;
-      font-size: 0.95em;
-      margin-top: 8px;
-    }
-    a.telegram-link {
-      display: inline-block;
-      margin-top: 20px;
-      text-decoration: none;
-      color: white;
-      background: #26a4e7;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-weight: bold;
+      cursor: pointer;
       transition: background 0.3s ease;
     }
-    a.telegram-link:hover {
-      background: #1d90cc;
+
+    .copy-btn:hover {
+      background-color: #d9205a;
+    }
+
+    .copied-msg {
+      margin-top: 8px;
+      color: #90ee90;
+      display: none;
+      font-size: 0.9em;
+    }
+
+    .telegram-link {
+      display: inline-block;
+      margin-top: 30px;
+      background: #26a4e7;
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1em;
+      transition: background 0.3s ease;
+    }
+
+    .telegram-link:hover {
+      background: #1c8fcf;
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Desbloqueie Agora 🔥</h1>
+    <p class="value">Valor: <strong>R$1,00</strong></p>
 
-  <div class="box">
-    <h1>Pagamento R$1</h1>
-    <p>Chave PIX:</p>
     <div id="pixKey" class="pix-key">pagamentovip10@gmail.com</div>
     <button class="copy-btn" onclick="copyPix()">📋 Copiar Chave PIX</button>
     <div class="copied-msg" id="copiedMsg">✔️ Chave copiada!</div>
 
-    <p>Envie o comprovante no Telegram:</p>
     <a class="telegram-link" href="https://t.me/assine_aqui" target="_blank">📩 Enviar Comprovante</a>
   </div>
 
@@ -86,13 +123,13 @@
     function copyPix() {
       const key = document.getElementById("pixKey").textContent;
       navigator.clipboard.writeText(key).then(() => {
-        document.getElementById("copiedMsg").style.display = 'block';
+        const msg = document.getElementById("copiedMsg");
+        msg.style.display = 'block';
         setTimeout(() => {
-          document.getElementById("copiedMsg").style.display = 'none';
+          msg.style.display = 'none';
         }, 2000);
       });
     }
   </script>
-
 </body>
 </html>
