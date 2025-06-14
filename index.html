@@ -36,46 +36,47 @@
     }
 
     h1 {
-      font-size: 2.3em;
-      margin-bottom: 10px;
+      font-size: 2.5em;
+      margin-bottom: 15px;
       color: #ff4dd2;
     }
 
     .valor {
-      font-size: 2em;
+      font-size: 2.5em;
       font-weight: bold;
-      color: #fff;
-      margin: 20px 0;
-      background: linear-gradient(to right, #ff4dd2, #ff0066);
-      padding: 12px;
-      border-radius: 15px;
-      animation: pulse 2s infinite;
-      box-shadow: 0 0 20px #ff4dd277;
+      color: #ff4dd2;
+      margin: 15px 0 25px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
     }
 
     p {
-      font-size: 1.05em;
-      margin-bottom: 18px;
+      font-size: 1.1em;
       color: #eee;
+      margin-bottom: 18px;
     }
 
     button {
       background: linear-gradient(to right, #ff4dd2, #ff0066);
       color: white;
       border: none;
-      padding: 14px;
-      font-size: 1.05em;
+      padding: 18px;
+      font-size: 1.2em;
       font-weight: bold;
-      border-radius: 12px;
+      border-radius: 14px;
       cursor: pointer;
       width: 100%;
-      margin: 10px 0;
-      box-shadow: 0 6px 20px rgba(255, 0, 127, 0.4);
+      margin: 12px 0;
+      box-shadow: 0 8px 22px rgba(255, 0, 127, 0.5);
       transition: transform 0.2s ease;
     }
 
     button:hover {
-      transform: scale(1.03);
+      transform: scale(1.04);
     }
 
     .copy-success {
@@ -92,23 +93,18 @@
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.03); }
-    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>ACESSO VIP 🔥</h1>
-    <div class="valor">Apenas R$10</div>
-    <p>Faça o pagamento via Pix e desbloqueie o conteúdo exclusivo agora mesmo.</p>
+    <div class="valor">R$ 10,00</div>
+    <p>Faça o pagamento via Pix para a chave abaixo e libere seu conteúdo exclusivo.</p>
     <button onclick="copiarPix()">📋 Copiar chave Pix</button>
     <div id="msg" class="copy-success"></div>
     <p style="margin-top: 12px;">Chave Pix:</p>
     <p><b>pagamentovip10@gmail.com</b></p>
-    <p>Depois do pagamento, envie o comprovante clicando no botão abaixo:</p>
+    <p>Após o pagamento, envie o comprovante clicando abaixo:</p>
     <a href="https://t.me/assine_aqui" target="_blank">
       <button>📤 Enviar comprovante</button>
     </a>
