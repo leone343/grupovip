@@ -3,66 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Assine o Grupo VIP 🔥</title>
+  <title>Assine o Grupo VIP 🔞</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, #fff, #f9f9f9);
+      background-color: #ffffff;
       font-family: Arial, sans-serif;
+      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      text-align: center;
+      box-sizing: border-box;
       padding: 20px;
     }
 
     h1 {
-      color: #e60000;
-      font-size: 2.2rem;
-      margin-bottom: 10px;
+      color: #000000;
+      font-size: 2rem;
+      margin-bottom: 20px;
     }
 
     .valor {
-      font-size: 2.5rem;
+      background-color: #ffd700;
+      color: #000000;
+      font-size: 2.2rem;
       font-weight: bold;
-      color: #ff0000;
+      padding: 15px 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
       animation: piscar 1s infinite;
-      margin-bottom: 20px;
     }
 
     @keyframes piscar {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
+      50% { opacity: 0.3; }
     }
 
-    .pix-box {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 400px;
-    }
-
-    .pix-key {
-      font-size: 1.1rem;
+    .pix {
+      font-size: 1.2rem;
       margin-bottom: 15px;
-      word-break: break-all;
+      word-break: break-word;
     }
 
     button {
-      background-color: #ff3333;
+      background-color: #ff0000;
       color: white;
-      padding: 15px;
       border: none;
-      border-radius: 10px;
-      font-size: 1rem;
-      margin: 10px 0;
+      padding: 15px;
+      margin-top: 10px;
+      font-size: 1.1rem;
+      border-radius: 8px;
       cursor: pointer;
       width: 100%;
+      max-width: 300px;
     }
 
     button:hover {
@@ -70,22 +66,23 @@
     }
 
     .info {
+      margin-top: 15px;
       font-size: 1rem;
-      margin-top: 10px;
+      color: #333;
     }
   </style>
 </head>
 <body>
 
-  <h1>💎 Assine o Grupo VIP +18</h1>
+  <h1>💎 Acesso VIP 🔞</h1>
+
   <div class="valor">R$ 10,00</div>
 
-  <div class="pix-box">
-    <div class="pix-key" id="pixKey">pagamentovip10@gmail.com</div>
-    <button onclick="copiarPix()">📋 Copiar chave Pix</button>
-    <button onclick="enviarComprovante()">📤 Enviar comprovante</button>
-    <div class="info">Após o pagamento, envie o comprovante para o Telegram clicando acima!</div>
-  </div>
+  <div class="pix" id="pixKey">pagamentovip10@gmail.com</div>
+  <button onclick="copiarPix()">📋 Copiar chave Pix</button>
+  <button onclick="enviarComprovante()">📤 Enviar comprovante</button>
+
+  <div class="info">Após o pagamento, envie o comprovante para nosso Telegram!</div>
 
   <script>
     function copiarPix() {
