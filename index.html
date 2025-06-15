@@ -1,85 +1,104 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Grupo VIP 🔞</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assine o Grupo VIP 🔥</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, #000000, #2b0000);
-      color: #fff;
-      font-family: 'Arial Black', sans-serif;
-      text-align: center;
+      background: linear-gradient(to bottom, #fff, #f9f9f9);
+      font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
+      align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      padding: 30px 20px;
-    }
-
-    .container {
-      max-width: 500px;
-      margin: auto;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
     }
 
     h1 {
-      font-size: 2.4em;
-      color: #FF3E3E;
-      margin-bottom: 25px;
+      color: #e60000;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
     }
 
-    p {
-      font-size: 1.4em;
-      margin-bottom: 20px;
-      line-height: 1.6em;
-    }
-
-    .destaque {
-      color: #FFD700;
-      font-size: 1.5em;
-      margin: 25px 0;
-    }
-
-    .assinatura {
-      margin-top: 40px;
-      font-size: 2em;
-      color: #FF3E3E;
+    .valor {
+      font-size: 2.5rem;
       font-weight: bold;
-      text-shadow: 0 0 10px #ff3e3e;
-      animation: piscar 1s infinite alternate;
+      color: #ff0000;
+      animation: piscar 1s infinite;
+      margin-bottom: 20px;
     }
 
     @keyframes piscar {
-      from { opacity: 1; }
-      to { opacity: 0.6; }
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .pix-box {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .pix-key {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      word-break: break-all;
+    }
+
+    button {
+      background-color: #ff3333;
+      color: white;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      margin: 10px 0;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #cc0000;
+    }
+
+    .info {
+      font-size: 1rem;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🔞 VOCÊ AINDA TÁ PAGANDO PRA GOZAR?</h1>
 
-    <p>😈 ENTÃO CÊ TÁ SENDO FEITO DE TROUXA, BEBÊ...</p>
+  <h1>💎 Assine o Grupo VIP +18</h1>
+  <div class="valor">R$ 10,00</div>
 
-    <p>No meu <strong>GRUPO VIP</strong> você vai se esbaldar com:</p>
-
-    <p>🔥 TODAS as putarias pagas do <strong>OnlyFans, Privacy, Brazzers, MYM, Tufos</strong> e muito mais</p>
-
-    <p>🧠 Nada de procurar vídeo – tá tudo organizado pra você gozar sem esforço</p>
-
-    <p>💦 Packs raros, pornôs de famosos, pornôs amadores, novinhas, putarias reais, e muito mais</p>
-
-    <p>💸 Paga uma vez e tem acesso à maior suruba virtual da sua vida</p>
-
-    <div class="destaque">💥 É o <em>Netflix do gozo</em>, irmão… só que sem frescura e com safadeza sem limite!</div>
-
-    <p>🤯 Tem vídeo pra gozar 3x por dia sem repetir!</p>
-
-    <p>🚨 Mas corre, porque o acesso VIP vai subir logo…</p>
-
-    <div class="assinatura">👉 ASSINE AGORA 👈</div>
+  <div class="pix-box">
+    <div class="pix-key" id="pixKey">pagamentovip10@gmail.com</div>
+    <button onclick="copiarPix()">📋 Copiar chave Pix</button>
+    <button onclick="enviarComprovante()">📤 Enviar comprovante</button>
+    <div class="info">Após o pagamento, envie o comprovante para o Telegram clicando acima!</div>
   </div>
+
+  <script>
+    function copiarPix() {
+      const chave = document.getElementById("pixKey").innerText;
+      navigator.clipboard.writeText(chave).then(() => {
+        alert("Chave Pix copiada com sucesso!");
+      });
+    }
+
+    function enviarComprovante() {
+      window.location.href = "https://t.me/assine_aqui";
+    }
+  </script>
+
 </body>
 </html>
