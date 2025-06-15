@@ -9,80 +9,78 @@
       margin: 0;
       padding: 0;
       background-color: #ffffff;
-      font-family: Arial, sans-serif;
-      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      box-sizing: border-box;
+      text-align: center;
       padding: 20px;
+      box-sizing: border-box;
     }
 
     h1 {
-      color: #000000;
       font-size: 2rem;
+      color: #111;
       margin-bottom: 20px;
     }
 
     .valor {
-      background-color: #ffd700;
-      color: #000000;
-      font-size: 2.2rem;
+      background-color: #ffdd00;
+      color: #111;
+      font-size: 2rem;
       font-weight: bold;
-      padding: 15px 30px;
-      border-radius: 10px;
+      padding: 15px 40px;
+      border-radius: 12px;
       margin-bottom: 30px;
-      animation: piscar 1s infinite;
-    }
-
-    @keyframes piscar {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     .pix {
-      font-size: 1.2rem;
-      margin-bottom: 15px;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #333;
       word-break: break-word;
     }
 
     button {
-      background-color: #ff0000;
+      background-color: #e60000;
       color: white;
       border: none;
       padding: 15px;
-      margin-top: 10px;
-      font-size: 1.1rem;
-      border-radius: 8px;
-      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 10px;
+      margin-top: 12px;
       width: 100%;
       max-width: 300px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
     button:hover {
-      background-color: #cc0000;
+      background-color: #c40000;
     }
 
     .info {
       margin-top: 15px;
-      font-size: 1rem;
-      color: #333;
+      font-size: 0.95rem;
+      color: #555;
     }
   </style>
 </head>
 <body>
 
-  <h1>💎 Acesso VIP 🔞</h1>
+  <h1>💎 Acesso VIP +18</h1>
 
   <div class="valor">R$ 10,00</div>
 
   <div class="pix" id="pixKey">pagamentovip10@gmail.com</div>
+
   <button onclick="copiarPix()">📋 Copiar chave Pix</button>
   <button onclick="enviarComprovante()">📤 Enviar comprovante</button>
 
-  <div class="info">Após o pagamento, envie o comprovante para nosso Telegram!</div>
+  <div class="info">Após o pagamento, envie o comprovante no Telegram para liberar o acesso.</div>
 
   <script>
     function copiarPix() {
