@@ -1,92 +1,112 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Assine o Grupo VIP 🔞</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assinatura VIP 🔞</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background-color: #ffffff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      text-align: center;
+      min-height: 100vh;
       padding: 20px;
-      box-sizing: border-box;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px 20px;
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
       color: #111;
-      margin-bottom: 20px;
     }
 
     .valor {
       background-color: #ffdd00;
-      color: #111;
-      font-size: 2rem;
-      font-weight: bold;
-      padding: 15px 40px;
+      color: #000;
+      display: inline-block;
+      padding: 12px 24px;
       border-radius: 12px;
-      margin-bottom: 30px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-size: 1.6rem;
+      font-weight: bold;
+      margin: 20px 0;
     }
 
     .pix {
       font-size: 1.1rem;
-      margin-bottom: 10px;
-      color: #333;
+      margin-bottom: 15px;
       word-break: break-word;
+      color: #444;
     }
 
     button {
-      background-color: #e60000;
-      color: white;
-      border: none;
-      padding: 15px;
-      font-size: 1rem;
-      border-radius: 10px;
-      margin-top: 12px;
       width: 100%;
-      max-width: 300px;
+      padding: 14px;
+      margin-top: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
 
-    button:hover {
-      background-color: #c40000;
+    .btn-copiar {
+      background-color: #0077ff;
+      color: white;
+    }
+
+    .btn-copiar:hover {
+      background-color: #005fd1;
+    }
+
+    .btn-comprovante {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .btn-comprovante:hover {
+      background-color: #218838;
     }
 
     .info {
       margin-top: 15px;
       font-size: 0.95rem;
-      color: #555;
+      color: #666;
     }
   </style>
 </head>
 <body>
 
-  <h1>💎 Acesso VIP +18</h1>
+  <div class="card">
+    <h1>💎 Assinatura VIP +18</h1>
+    <div class="valor">R$ 10,00</div>
+    <div class="pix" id="pixKey">pagamentovip10@gmail.com</div>
 
-  <div class="valor">R$ 10,00</div>
+    <button class="btn-copiar" onclick="copiarPix()">📋 Copiar chave Pix</button>
+    <button class="btn-comprovante" onclick="enviarComprovante()">📤 Enviar comprovante</button>
 
-  <div class="pix" id="pixKey">pagamentovip10@gmail.com</div>
-
-  <button onclick="copiarPix()">📋 Copiar chave Pix</button>
-  <button onclick="enviarComprovante()">📤 Enviar comprovante</button>
-
-  <div class="info">Após o pagamento, envie o comprovante no Telegram para liberar o acesso.</div>
+    <div class="info">
+      Após o pagamento, envie o comprovante para liberar o acesso ao grupo VIP.
+    </div>
+  </div>
 
   <script>
     function copiarPix() {
       const chave = document.getElementById("pixKey").innerText;
       navigator.clipboard.writeText(chave).then(() => {
-        alert("Chave Pix copiada com sucesso!");
+        alert("✅ Chave Pix copiada!");
       });
     }
 
