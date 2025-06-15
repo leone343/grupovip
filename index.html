@@ -44,15 +44,16 @@
     }
 
     .instrucao {
-      font-size: 1rem;
+      font-family: 'Georgia', serif;
+      font-size: 1.1rem;
       color: #333;
       margin-top: 10px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     .pix {
       font-size: 1.1rem;
-      margin-bottom: 15px;
+      margin-top: 15px;
       word-break: break-word;
       color: #444;
     }
@@ -109,10 +110,10 @@
 
     <div class="instrucao">Faça o pagamento via Pix para ter acesso ao grupo VIP.</div>
 
-    <div class="pix" id="pixKey">pagamentovip10@gmail.com</div>
-
     <button class="btn-copiar" onclick="copiarPix()">📋 Copiar chave Pix</button>
     <div id="mensagem" class="mensagem-copiado">✅ Chave Pix copiada!</div>
+
+    <div class="pix" id="pixKey">pagamentovip10@gmail.com</div>
 
     <button class="btn-comprovante" onclick="enviarComprovante()">📤 Enviar comprovante</button>
 
