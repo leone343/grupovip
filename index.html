@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grupo VIP 🔥</title>
+  <title>Grupo VIP</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -23,7 +23,7 @@
       padding: 30px;
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(255, 0, 100, 0.3);
-      max-width: 400px;
+      max-width: 420px;
       width: 90%;
       text-align: center;
     }
@@ -49,30 +49,27 @@
 
     .pix-box {
       background-color: #262626;
-      padding: 10px;
+      padding: 12px;
       border-radius: 10px;
-      margin: 10px 0 20px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      margin: 10px 0;
       color: #ffffff;
-      font-size: 16px;
+      font-size: 18px;
     }
 
-    button {
+    button.copy-btn {
       background-color: #ff0066;
       color: white;
       border: none;
-      padding: 12px 20px;
-      font-size: 16px;
+      padding: 16px 20px;
+      font-size: 18px;
       border-radius: 10px;
       cursor: pointer;
       transition: background-color 0.3s ease;
-      margin-top: 10px;
+      margin-top: 15px;
       width: 100%;
     }
 
-    button:hover {
+    button.copy-btn:hover {
       background-color: #e6005c;
     }
 
@@ -84,13 +81,14 @@
 
     a.telegram {
       display: block;
-      margin-top: 20px;
+      margin-top: 25px;
       background-color: #0088cc;
-      padding: 12px 20px;
+      padding: 14px 20px;
       border-radius: 10px;
       color: white;
       text-decoration: none;
       font-weight: bold;
+      font-size: 16px;
     }
 
     a.telegram:hover {
@@ -100,19 +98,25 @@
 </head>
 <body>
   <div class="container">
-    <h1>🔥 Entre para o Grupo VIP</h1>
-    <p>Tenha acesso exclusivo ao melhor conteúdo +18 sem censura.</p>
+    <h1>Grupo VIP 🔥</h1>
     
-    <div class="valor">Apenas R$10</div>
+    <p>
+      Para liberar o acesso ao conteúdo exclusivo, faça o Pix no valor de:
+    </p>
 
-    <p>Faça o Pix para:</p>
-    <div class="pix-box">
-      <span id="pixKey">pagamentovip10@gmail.com</span>
-      <button onclick="copyPix()">Copiar</button>
-    </div>
+    <div class="valor">R$ 10</div>
+
+    <p>Chave Pix:</p>
+    <div class="pix-box" id="pixKey">pagamentovip10@gmail.com</div>
+
+    <button class="copy-btn" onclick="copyPix()">📋 Copiar Chave Pix</button>
     <div id="copyStatus" class="copy-status"></div>
 
-    <a class="telegram" href="https://t.me/assine_aqui" target="_blank">📩 Enviar Comprovante no Telegram</a>
+    <p>
+      Após o pagamento, envie o comprovante para que o acesso seja liberado:
+    </p>
+
+    <a class="telegram" href="https://t.me/assine_aqui" target="_blank">📩 Enviar Comprovante</a>
   </div>
 
   <script>
