@@ -9,30 +9,38 @@
     body {
       margin: 0;
       padding: 30px 20px;
-      background-color: #0d0d0d;
+      background: linear-gradient(135deg, #330044, #660066, #ff0066);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
       color: #ffffff;
       font-family: 'Inter', sans-serif;
       text-align: center;
     }
 
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     h1 {
       font-size: 70px;
       font-family: 'Playfair Display', serif;
-      color: #ff0066;
+      color: #ffccff;
       margin-bottom: 30px;
       animation: glow 2s infinite;
     }
 
     @keyframes glow {
-      0% { text-shadow: 0 0 10px #ff0066; }
+      0% { text-shadow: 0 0 10px #ff66cc; }
       50% { text-shadow: 0 0 20px #ff3399; }
-      100% { text-shadow: 0 0 10px #ff0066; }
+      100% { text-shadow: 0 0 10px #ff66cc; }
     }
 
     .valor {
       font-size: 60px;
       font-weight: 800;
-      color: #00ff88;
+      color: #00ffcc;
       margin: 25px 0;
       animation: pulse 1.5s infinite;
     }
@@ -49,55 +57,40 @@
       color: #ffffff;
     }
 
-    button.copy-btn {
+    button.copy-btn,
+    a.telegram {
+      display: inline-block;
       background-color: #ff0066;
       color: white;
       border: none;
-      padding: 24px;
+      padding: 24px 40px;
       font-size: 22px;
       border-radius: 14px;
       cursor: pointer;
       transition: background-color 0.3s ease;
-      margin-top: 10px;
+      font-weight: bold;
       width: 100%;
       max-width: 460px;
-      font-weight: bold;
+      margin-top: 10px;
+      text-decoration: none;
     }
 
-    button.copy-btn:hover {
+    button.copy-btn:hover,
+    a.telegram:hover {
       background-color: #e6005c;
     }
 
     .copy-status {
       margin-top: 10px;
-      color: #00ff88;
+      color: #ccffcc;
       font-size: 14px;
     }
 
     p.discreto {
-      font-size: 18px;
-      color: #cccccc;
+      font-size: 16px;
+      color: #f0f0f0;
       font-style: italic;
       margin: 30px 0 10px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    a.telegram {
-      display: inline-block;
-      background-color: #0088cc;
-      padding: 24px 40px;
-      border-radius: 14px;
-      color: white;
-      text-decoration: none;
-      font-size: 22px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-
-    a.telegram:hover {
-      background-color: #0070a6;
     }
 
     audio {
@@ -113,9 +106,14 @@
         font-size: 44px;
       }
 
-      button.copy-btn, a.telegram {
+      button.copy-btn,
+      a.telegram {
         font-size: 20px;
         padding: 20px;
+      }
+
+      p.discreto {
+        font-size: 14px;
       }
     }
   </style>
@@ -132,11 +130,10 @@
   <button class="copy-btn" onclick="copyPix()">📋 Copiar Chave Pix</button>
   <div id="copyStatus" class="copy-status"></div>
 
-  <p class="discreto">após o pagamento envie o comprovante no botão abaixo</p>
+  <p class="discreto">após o pagamento envie o comprovante usando o botão abaixo</p>
 
   <a class="telegram" href="https://t.me/assine_aqui" target="_blank" onclick="playSound()">📩 Enviar Comprovante</a>
 
-  <!-- Som de clique satisfatório -->
   <audio id="clickSound" src="https://assets.mixkit.co/active_storage/sfx/2476/2476-preview.mp3"></audio>
 
   <script>
