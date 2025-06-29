@@ -3,67 +3,125 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🔥 Surpresa Quente +18</title>
-  
+  <title>Grupo VIP 🔥</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       padding: 0;
-      background-color: #000000; /* Fundo preto */
-      font-family: 'Arial', sans-serif;
-      color: #fff;
+      background-color: #0d0d0d;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       height: 100vh;
     }
 
-    .overlay {
-      background-color: rgba(255, 0, 0, 0.8); /* vermelho transparente */
+    .container {
+      background: #1a1a1a;
       padding: 30px;
       border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 0, 100, 0.3);
+      max-width: 400px;
+      width: 90%;
       text-align: center;
-      max-width: 90%;
-      box-shadow: 0 0 20px #ff0000;
     }
 
     h1 {
-      font-size: 2.5em;
+      font-size: 32px;
       margin-bottom: 10px;
-      color: #ff4d4d;
-      text-shadow: 0 0 10px #ff0000;
+      color: #ff0066;
     }
 
     p {
-      font-size: 1.2em;
-      margin-bottom: 15px;
-      text-shadow: 0 0 8px #ff0000;
+      font-size: 18px;
+      margin: 15px 0;
+      line-height: 1.5;
     }
 
-    .tag {
-      background-color: #ff1a1a;
-      color: #fff;
-      display: inline-block;
-      padding: 5px 10px;
+    .valor {
+      font-size: 40px;
+      font-weight: 800;
+      color: #00ff88;
+      margin: 20px 0;
+    }
+
+    .pix-box {
+      background-color: #262626;
+      padding: 10px;
       border-radius: 10px;
+      margin: 10px 0 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #ffffff;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #ff0066;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
       margin-top: 10px;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #e6005c;
+    }
+
+    .copy-status {
+      margin-top: 10px;
+      color: #00ff88;
+      font-size: 14px;
+    }
+
+    a.telegram {
+      display: block;
+      margin-top: 20px;
+      background-color: #0088cc;
+      padding: 12px 20px;
+      border-radius: 10px;
+      color: white;
+      text-decoration: none;
       font-weight: bold;
-      box-shadow: 0 0 10px #ff0000;
+    }
+
+    a.telegram:hover {
+      background-color: #0070a6;
     }
   </style>
 </head>
-
 <body>
+  <div class="container">
+    <h1>🔥 Entre para o Grupo VIP</h1>
+    <p>Tenha acesso exclusivo ao melhor conteúdo +18 sem censura.</p>
+    
+    <div class="valor">Apenas R$10</div>
 
-  <div class="overlay">
-    <h1>🔥 Surpresa Especial Para Você 🔞</h1>
-    <p>Prepare-se para ver algo que vai te deixar sem fôlego... sem censura e sem limites!</p>
-    <div class="tag">+18 SOMENTE</div>
+    <p>Faça o Pix para:</p>
+    <div class="pix-box">
+      <span id="pixKey">pagamentovip10@gmail.com</span>
+      <button onclick="copyPix()">Copiar</button>
+    </div>
+    <div id="copyStatus" class="copy-status"></div>
+
+    <a class="telegram" href="https://t.me/assine_aqui" target="_blank">📩 Enviar Comprovante no Telegram</a>
   </div>
 
-  <!-- Script do anúncio WPAdManager -->
-  <script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="344809"></script>
-
+  <script>
+    function copyPix() {
+      const pix = document.getElementById('pixKey').innerText;
+      navigator.clipboard.writeText(pix).then(() => {
+        document.getElementById('copyStatus').innerText = "🔑 Chave Pix copiada com sucesso!";
+      });
+    }
+  </script>
 </body>
 </html>
