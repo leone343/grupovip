@@ -16,20 +16,17 @@
     }
 
     h1 {
-      font-size: 52px;
+      font-size: 70px;
       font-family: 'Playfair Display', serif;
       color: #ff0066;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      animation: glow 2s infinite;
     }
 
-    p.discreto {
-      font-size: 18px;
-      color: #cccccc;
-      font-style: italic;
-      margin: 10px 0;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px #ff0066; }
+      50% { text-shadow: 0 0 20px #ff3399; }
+      100% { text-shadow: 0 0 10px #ff0066; }
     }
 
     .valor {
@@ -47,24 +44,23 @@
     }
 
     .pix-box {
-      font-size: 20px;
-      background-color: transparent;
+      font-size: 22px;
+      margin: 20px 0;
       color: #ffffff;
-      margin: 15px 0;
     }
 
     button.copy-btn {
       background-color: #ff0066;
       color: white;
       border: none;
-      padding: 18px;
-      font-size: 20px;
-      border-radius: 12px;
+      padding: 24px;
+      font-size: 22px;
+      border-radius: 14px;
       cursor: pointer;
       transition: background-color 0.3s ease;
       margin-top: 10px;
       width: 100%;
-      max-width: 400px;
+      max-width: 460px;
       font-weight: bold;
     }
 
@@ -78,15 +74,24 @@
       font-size: 14px;
     }
 
+    p.discreto {
+      font-size: 18px;
+      color: #cccccc;
+      font-style: italic;
+      margin: 30px 0 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
     a.telegram {
       display: inline-block;
-      margin-top: 25px;
       background-color: #0088cc;
-      padding: 18px 40px;
-      border-radius: 12px;
+      padding: 24px 40px;
+      border-radius: 14px;
       color: white;
       text-decoration: none;
-      font-size: 20px;
+      font-size: 22px;
       font-weight: bold;
       transition: background-color 0.3s ease;
     }
@@ -101,16 +106,16 @@
 
     @media screen and (max-width: 480px) {
       h1 {
-        font-size: 42px;
-      }
-
-      .valor {
         font-size: 48px;
       }
 
+      .valor {
+        font-size: 44px;
+      }
+
       button.copy-btn, a.telegram {
-        font-size: 18px;
-        padding: 16px;
+        font-size: 20px;
+        padding: 20px;
       }
     }
   </style>
@@ -119,7 +124,6 @@
 
   <h1>Grupo VIP</h1>
 
-  <p class="discreto">faça o pagamento via Pix</p>
   <div class="valor">R$ 10</div>
 
   <p>Chave Pix:</p>
@@ -132,8 +136,8 @@
 
   <a class="telegram" href="https://t.me/assine_aqui" target="_blank" onclick="playSound()">📩 Enviar Comprovante</a>
 
-  <!-- Efeito sonoro embutido -->
-  <audio id="clickSound" src="https://assets.mixkit.co/active_storage/sfx/1906/1906-preview.mp3"></audio>
+  <!-- Som de clique satisfatório -->
+  <audio id="clickSound" src="https://assets.mixkit.co/active_storage/sfx/2476/2476-preview.mp3"></audio>
 
   <script>
     function playSound() {
