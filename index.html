@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grupo VIP</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
@@ -29,22 +29,31 @@
     }
 
     h1 {
-      font-size: 32px;
+      font-size: 38px;
+      font-family: 'Playfair Display', serif;
       margin-bottom: 10px;
-      color: #ff0066;
+      color: #ffffff;
     }
 
-    p {
-      font-size: 18px;
-      margin: 15px 0;
-      line-height: 1.5;
+    p.discreto {
+      font-size: 16px;
+      color: #cccccc;
+      margin: 10px 0;
+      font-style: italic;
     }
 
     .valor {
-      font-size: 40px;
+      font-size: 48px;
       font-weight: 800;
       color: #00ff88;
       margin: 20px 0;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
 
     .pix-box {
@@ -94,16 +103,17 @@
     a.telegram:hover {
       background-color: #0070a6;
     }
+
+    audio {
+      display: none;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Grupo VIP 🔥</h1>
+    <h1>Grupo VIP</h1>
     
-    <p>
-      Para liberar o acesso ao conteúdo exclusivo, faça o Pix no valor de:
-    </p>
-
+    <p class="discreto">faça o pagamento via Pix</p>
     <div class="valor">R$ 10</div>
 
     <p>Chave Pix:</p>
@@ -112,18 +122,28 @@
     <button class="copy-btn" onclick="copyPix()">📋 Copiar Chave Pix</button>
     <div id="copyStatus" class="copy-status"></div>
 
-    <p>
-      Após o pagamento, envie o comprovante para que o acesso seja liberado:
-    </p>
+    <p class="discreto">após o pagamento envie o comprovante no botão abaixo</p>
 
-    <a class="telegram" href="https://t.me/assine_aqui" target="_blank">📩 Enviar Comprovante</a>
+    <a class="telegram" href="https://t.me/assine_aqui" target="_blank" onclick="playSound()">📩 Enviar Comprovante</a>
   </div>
 
+  <!-- Efeito sonoro embutido em base64 -->
+  <audio id="clickSound" src="data:audio/mp3;base64,//uQxAAAAAAAAAAAAAAAAAAAAAAAWGluZwAAAA8AAAACAAACcQCA... (encurtado para visualização)">
+    Seu navegador não suporta áudio.
+  </audio>
+
   <script>
+    function playSound() {
+      const sound = document.getElementById('clickSound');
+      sound.currentTime = 0;
+      sound.play();
+    }
+
     function copyPix() {
       const pix = document.getElementById('pixKey').innerText;
       navigator.clipboard.writeText(pix).then(() => {
         document.getElementById('copyStatus').innerText = "🔑 Chave Pix copiada com sucesso!";
+        playSound();
       });
     }
   </script>
