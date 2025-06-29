@@ -8,45 +8,35 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
+      padding: 30px 20px;
       background-color: #0d0d0d;
       color: #ffffff;
       font-family: 'Inter', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .container {
-      background: #1a1a1a;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(255, 0, 100, 0.3);
-      max-width: 420px;
-      width: 90%;
       text-align: center;
     }
 
     h1 {
-      font-size: 38px;
+      font-size: 52px;
       font-family: 'Playfair Display', serif;
-      margin-bottom: 10px;
-      color: #ffffff;
+      color: #ff0066;
+      margin-bottom: 20px;
     }
 
     p.discreto {
-      font-size: 16px;
+      font-size: 18px;
       color: #cccccc;
-      margin: 10px 0;
       font-style: italic;
+      margin: 10px 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .valor {
-      font-size: 48px;
+      font-size: 60px;
       font-weight: 800;
       color: #00ff88;
-      margin: 20px 0;
+      margin: 25px 0;
       animation: pulse 1.5s infinite;
     }
 
@@ -57,25 +47,25 @@
     }
 
     .pix-box {
-      background-color: #262626;
-      padding: 12px;
-      border-radius: 10px;
-      margin: 10px 0;
+      font-size: 20px;
+      background-color: transparent;
       color: #ffffff;
-      font-size: 18px;
+      margin: 15px 0;
     }
 
     button.copy-btn {
       background-color: #ff0066;
       color: white;
       border: none;
-      padding: 16px 20px;
-      font-size: 18px;
-      border-radius: 10px;
+      padding: 18px;
+      font-size: 20px;
+      border-radius: 12px;
       cursor: pointer;
       transition: background-color 0.3s ease;
-      margin-top: 15px;
+      margin-top: 10px;
       width: 100%;
+      max-width: 400px;
+      font-weight: bold;
     }
 
     button.copy-btn:hover {
@@ -89,15 +79,16 @@
     }
 
     a.telegram {
-      display: block;
+      display: inline-block;
       margin-top: 25px;
       background-color: #0088cc;
-      padding: 14px 20px;
-      border-radius: 10px;
+      padding: 18px 40px;
+      border-radius: 12px;
       color: white;
       text-decoration: none;
+      font-size: 20px;
       font-weight: bold;
-      font-size: 16px;
+      transition: background-color 0.3s ease;
     }
 
     a.telegram:hover {
@@ -107,30 +98,42 @@
     audio {
       display: none;
     }
+
+    @media screen and (max-width: 480px) {
+      h1 {
+        font-size: 42px;
+      }
+
+      .valor {
+        font-size: 48px;
+      }
+
+      button.copy-btn, a.telegram {
+        font-size: 18px;
+        padding: 16px;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Grupo VIP</h1>
-    
-    <p class="discreto">faça o pagamento via Pix</p>
-    <div class="valor">R$ 10</div>
 
-    <p>Chave Pix:</p>
-    <div class="pix-box" id="pixKey">pagamentovip10@gmail.com</div>
+  <h1>Grupo VIP</h1>
 
-    <button class="copy-btn" onclick="copyPix()">📋 Copiar Chave Pix</button>
-    <div id="copyStatus" class="copy-status"></div>
+  <p class="discreto">faça o pagamento via Pix</p>
+  <div class="valor">R$ 10</div>
 
-    <p class="discreto">após o pagamento envie o comprovante no botão abaixo</p>
+  <p>Chave Pix:</p>
+  <div class="pix-box" id="pixKey">pagamentovip10@gmail.com</div>
 
-    <a class="telegram" href="https://t.me/assine_aqui" target="_blank" onclick="playSound()">📩 Enviar Comprovante</a>
-  </div>
+  <button class="copy-btn" onclick="copyPix()">📋 Copiar Chave Pix</button>
+  <div id="copyStatus" class="copy-status"></div>
 
-  <!-- Efeito sonoro embutido em base64 -->
-  <audio id="clickSound" src="data:audio/mp3;base64,//uQxAAAAAAAAAAAAAAAAAAAAAAAWGluZwAAAA8AAAACAAACcQCA... (encurtado para visualização)">
-    Seu navegador não suporta áudio.
-  </audio>
+  <p class="discreto">após o pagamento envie o comprovante no botão abaixo</p>
+
+  <a class="telegram" href="https://t.me/assine_aqui" target="_blank" onclick="playSound()">📩 Enviar Comprovante</a>
+
+  <!-- Efeito sonoro embutido -->
+  <audio id="clickSound" src="https://assets.mixkit.co/active_storage/sfx/1906/1906-preview.mp3"></audio>
 
   <script>
     function playSound() {
