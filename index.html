@@ -1,140 +1,86 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Assinatura VIP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conteúdo Exclusivo 🔞</title>
+
+  <!-- Código de verificação do PopCash -->
+  <meta name="ppck-ver" content="7dacbe0f7839b2f0e65c4dba5a9017fa" />
+
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #4b6cb7, #182848);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
-
-    .card {
-      background-color: #fff;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      padding: 30px 20px;
+      background: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
       text-align: center;
-      width: 100%;
-      max-width: 400px;
+      padding: 40px;
     }
 
     h1 {
-      font-size: 1.8rem;
+      font-size: 24px;
       margin-bottom: 10px;
-      color: #111;
     }
 
-    .valor {
-      background-color: #ffdd00;
-      color: #000;
-      display: inline-block;
-      padding: 12px 24px;
-      border-radius: 12px;
-      font-size: 1.6rem;
-      font-weight: bold;
-      margin: 20px 0;
+    .timer {
+      font-size: 20px;
+      color: #ccc;
+      margin-top: 20px;
     }
 
-    .instrucao {
-      font-family: 'Georgia', serif;
-      font-size: 1.1rem;
-      color: #333;
-      margin-top: 10px;
-      margin-bottom: 20px;
-    }
-
-    .pix {
-      font-size: 1.1rem;
-      margin-top: 15px;
-      word-break: break-word;
-      color: #444;
-    }
-
-    button {
-      width: 100%;
-      padding: 14px;
-      margin-top: 10px;
-      font-size: 1rem;
-      font-weight: 600;
+    #btn {
+      margin-top: 30px;
+      padding: 15px 40px;
+      font-size: 18px;
       border: none;
       border-radius: 10px;
+      background: #e6005c;
+      color: white;
+      opacity: 0.5;
+      cursor: not-allowed;
+      transition: 0.3s ease;
+    }
+
+    #btn.enabled {
+      opacity: 1;
       cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn-copiar {
-      background-color: #0077ff;
-      color: white;
-    }
-
-    .btn-copiar:hover {
-      background-color: #005fd1;
-    }
-
-    .btn-comprovante {
-      background-color: #28a745;
-      color: white;
-    }
-
-    .btn-comprovante:hover {
-      background-color: #218838;
-    }
-
-    .info {
-      margin-top: 15px;
-      font-size: 0.95rem;
-      color: #666;
-    }
-
-    .mensagem-copiado {
-      margin-top: 8px;
-      font-size: 0.95rem;
-      color: green;
-      display: none;
     }
   </style>
-</head>
-<body>
-
-  <div class="card">
-    <h1>💎 Assinatura VIP</h1>
-    <div class="valor">R$ 10,00</div>
-
-    <div class="instrucao">Faça o pagamento via Pix</div>
-
-    <button class="btn-copiar" onclick="copiarPix()">📋 Copiar chave Pix</button>
-    <div id="mensagem" class="mensagem-copiado">✅ Chave Pix copiada!</div>
-
-    <div class="pix" id="pixKey">pagamentovip10@gmail.com</div>
-
-    <button class="btn-comprovante" onclick="enviarComprovante()">📤 Enviar comprovante</button>
-
-    <div class="info">
-      Após o pagamento, envie o comprovante para liberar o acesso ao grupo VIP.
-    </div>
-  </div>
 
   <script>
-    function copiarPix() {
-      const chave = document.getElementById("pixKey").innerText;
-      navigator.clipboard.writeText(chave).then(() => {
-        const msg = document.getElementById("mensagem");
-        msg.style.display = 'block';
-      });
-    }
-
-    function enviarComprovante() {
-      window.location.href = "https://t.me/assine_aqui";
+    // POPUNDER - COLE O CÓDIGO DO POPCASH AQUI QUANDO TIVER
+    function abrirPopunder() {
+      // Exemplo: window.open('https://seupopunder.com', '_blank');
     }
   </script>
+</head>
+<body onload="abrirPopunder()">
+  <h1>⚠️ Aguarde para acessar o conteúdo 🔞</h1>
+  <p class="timer">Liberando em <span id="count">15</span> segundos…</p>
 
+  <button id="btn" disabled>🔓 Liberar Conteúdo</button>
+
+  <script>
+    let segundos = 15;
+    const contador = document.getElementById('count');
+    const botao = document.getElementById('btn');
+
+    const timer = setInterval(() => {
+      segundos--;
+      contador.textContent = segundos;
+
+      if (segundos <= 0) {
+        clearInterval(timer);
+        botao.disabled = false;
+        botao.classList.add('enabled');
+        botao.textContent = '✅ Acessar Conteúdo';
+
+        botao.onclick = () => {
+          // Redirecionamento: coloque o link do Telegram aqui depois
+          window.location.href = "";
+        };
+      }
+    }, 1000);
+  </script>
 </body>
 </html>
