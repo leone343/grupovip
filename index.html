@@ -13,8 +13,12 @@
       animation: slowRGB 30s ease infinite;
       font-family: 'Inter', sans-serif;
       color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
       text-align: center;
-      padding: 40px 20px;
     }
 
     @keyframes slowRGB {
@@ -23,12 +27,17 @@
       100% { background-position: 0% 50%; }
     }
 
+    .container {
+      max-width: 600px;
+      width: 100%;
+    }
+
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 48px; /* Tamanho reduzido */
+      font-size: 48px;
       color: #ff0066;
       text-shadow: 0 0 6px rgba(255, 0, 100, 0.4);
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       white-space: nowrap;
     }
 
@@ -36,7 +45,7 @@
       font-size: 60px;
       font-weight: 800;
       color: #00ffcc;
-      margin: 10px 0 40px;
+      margin: 10px 0 30px;
       animation: pulse 1.5s infinite;
     }
 
@@ -56,7 +65,7 @@
       background-color: #ff0066;
       color: #fff;
       border: none;
-      padding: 20px 40px;
+      padding: 18px 40px;
       font-size: 22px;
       border-radius: 14px;
       cursor: pointer;
@@ -86,28 +95,30 @@
     audio { display: none; }
 
     @media screen and (max-width: 480px) {
-      h1 { font-size: 32px; } /* Título menor no celular */
+      h1 { font-size: 32px; }
       .valor { font-size: 44px; }
-      .btn { font-size: 20px; padding: 18px; }
+      .btn { font-size: 20px; padding: 16px; }
       p.discreto { font-size: 13px; }
     }
   </style>
 </head>
 <body>
 
-  <h1>Conteúdo Exclusivo</h1>
+  <div class="container">
+    <h1>Conteúdo Exclusivo</h1>
 
-  <div class="valor">R$ 2,00</div>
+    <div class="valor">R$ 2,00</div>
 
-  <p>Chave Pix:</p>
-  <div class="pix-box" id="pixKey">pagamentovip10@gmail.com</div>
+    <p>Chave Pix:</p>
+    <div class="pix-box" id="pixKey">pagamentovip10@gmail.com</div>
 
-  <button class="btn" onclick="copyPix()">📋 Copiar Chave Pix</button>
-  <div id="copyStatus" class="copy-status"></div>
+    <button class="btn" onclick="copyPix()">📋 Copiar Chave Pix</button>
+    <div id="copyStatus" class="copy-status"></div>
 
-  <p class="discreto">Após o pagamento, envie o comprovante usando o botão abaixo</p>
+    <p class="discreto">Após o pagamento, envie o comprovante usando o botão abaixo</p>
 
-  <a class="btn" href="https://t.me/assine_aqui" target="_blank" onclick="playSound()">📩 Enviar Comprovante</a>
+    <a class="btn" href="https://t.me/assine_aqui" target="_blank" onclick="playSound()">📩 Enviar Comprovante</a>
+  </div>
 
   <audio id="clickSound" src="https://assets.mixkit.co/active_storage/sfx/2476/2476-preview.mp3"></audio>
 
