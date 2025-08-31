@@ -4,26 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Conteúdo Exclusivo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       background: linear-gradient(270deg, #1a001a, #0f0026, #001a1a, #1a0f00);
       background-size: 800% 800%;
       animation: slowRGB 30s ease infinite;
       font-family: 'Inter', sans-serif;
       color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
       text-align: center;
-      padding: 20px;
+      padding: 40px 20px;
     }
 
     @keyframes slowRGB {
@@ -32,27 +23,17 @@
       100% { background-position: 0% 50%; }
     }
 
-    .container {
-      max-width: 700px;
-      width: 100%;
-    }
-
     h1 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 900;
-      color: #ff0066;
-      letter-spacing: 2px;
-      white-space: nowrap; /* sempre em uma linha */
-      font-size: 72px; /* tamanho original */
-      margin-bottom: 50px;
-      text-shadow:
-        0 0 3px #ff004c,
-        0 0 8px #ff004c,
-        0 0 15px rgba(255, 0, 76, 0.5);
+      font-family: 'Playfair Display', serif;
+      font-size: 60px;
+      color: #ff0066; /* mesma cor dos botões */
+      text-shadow: 0 0 6px rgba(255, 0, 100, 0.4);
+      margin-bottom: 40px;
+      white-space: nowrap; /* Mantém tudo em uma linha só */
     }
 
     .valor {
-      font-size: 60px; /* tamanho original */
+      font-size: 60px;
       font-weight: 800;
       color: #00ffcc;
       margin: 10px 0 40px;
@@ -75,8 +56,8 @@
       background-color: #ff0066;
       color: #fff;
       border: none;
-      padding: 20px 40px; /* tamanho original */
-      font-size: 22px; /* tamanho original */
+      padding: 20px 40px;
+      font-size: 22px;
       border-radius: 14px;
       cursor: pointer;
       font-weight: bold;
@@ -87,9 +68,7 @@
       transition: background-color 0.3s;
     }
 
-    .btn:hover {
-      background-color: #e6005c;
-    }
+    .btn:hover { background-color: #e6005c; }
 
     .copy-status {
       margin-top: 10px;
@@ -104,12 +83,10 @@
       margin: 30px 0 10px;
     }
 
-    audio {
-      display: none;
-    }
+    audio { display: none; }
 
     @media screen and (max-width: 480px) {
-      h1 { font-size: 50px; }
+      h1 { font-size: 40px; }
       .valor { font-size: 44px; }
       .btn { font-size: 20px; padding: 18px; }
       p.discreto { font-size: 13px; }
@@ -118,23 +95,21 @@
 </head>
 <body>
 
-  <div class="container">
-    <h1></h1>
+  <h1>Conteúdo Exclusivo</h1>
 
-    <div class="valor">R$ 2,00</div>
+  <div class="valor">R$ 2,00</div>
 
-    <p>Chave Pix:</p>
-    <div class="pix-box" id="pixKey">pagamentovip10@gmail.com</div>
+  <p>Chave Pix:</p>
+  <div class="pix-box" id="pixKey">pagamentovip10@gmail.com</div>
 
-    <button class="btn" onclick="copyPix()">📋 Copiar Chave Pix</button>
-    <div id="copyStatus" class="copy-status"></div>
+  <button class="btn" onclick="copyPix()">📋 Copiar Chave Pix</button>
+  <div id="copyStatus" class="copy-status"></div>
 
-    <p class="discreto">Após o pagamento, envie o comprovante usando o botão abaixo</p>
+  <p class="discreto">Após o pagamento, envie o comprovante usando o botão abaixo</p>
 
-    <a class="btn" href="https://t.me/assine_aqui" target="_blank" onclick="playSound()">📩 Enviar Comprovante</a>
+  <a class="btn" href="https://t.me/assine_aqui" target="_blank" onclick="playSound()">📩 Enviar Comprovante</a>
 
-    <audio id="clickSound" src="https://assets.mixkit.co/active_storage/sfx/2476/2476-preview.mp3"></audio>
-  </div>
+  <audio id="clickSound" src="https://assets.mixkit.co/active_storage/sfx/2476/2476-preview.mp3"></audio>
 
   <script>
     function playSound() {
@@ -153,4 +128,3 @@
   </script>
 </body>
 </html>
-
