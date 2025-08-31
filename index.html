@@ -33,7 +33,7 @@
     }
 
     .container {
-      max-width: 600px;
+      max-width: 700px;
       width: 100%;
     }
 
@@ -41,32 +41,32 @@
       font-family: 'Poppins', sans-serif;
       font-weight: 900;
       color: #ff0066;
-      letter-spacing: 1px;
-      white-space: nowrap;
-      font-size: clamp(34px, 7vw, 60px);
-      margin-bottom: 40px;
+      letter-spacing: 2px;
+      white-space: nowrap; /* sempre em uma linha */
+      font-size: 72px; /* tamanho original */
+      margin-bottom: 50px;
       text-shadow:
-        0 0 2px #ff004c,
-        0 0 5px #ff004c,
-        0 0 10px rgba(255, 0, 76, 0.4);
+        0 0 3px #ff004c,
+        0 0 8px #ff004c,
+        0 0 15px rgba(255, 0, 76, 0.5);
     }
 
     .valor {
-      font-size: 48px;
+      font-size: 60px; /* tamanho original */
       font-weight: 800;
       color: #00ffcc;
-      margin: 10px 0 30px;
+      margin: 10px 0 40px;
       animation: pulse 1.5s infinite;
     }
 
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+      50% { transform: scale(1.1); }
     }
 
     .pix-box {
       font-size: 22px;
-      margin: 10px 0;
+      margin: 15px 0;
       word-break: break-all;
     }
 
@@ -75,15 +75,15 @@
       background-color: #ff0066;
       color: #fff;
       border: none;
-      padding: 16px 32px;
-      font-size: 20px;
+      padding: 20px 40px; /* tamanho original */
+      font-size: 22px; /* tamanho original */
       border-radius: 14px;
       cursor: pointer;
       font-weight: bold;
       text-decoration: none;
-      margin: 18px auto;
+      margin: 20px auto;
       width: 100%;
-      max-width: 400px;
+      max-width: 460px;
       transition: background-color 0.3s;
     }
 
@@ -98,10 +98,10 @@
     }
 
     p.discreto {
-      font-size: 14px;
+      font-size: 15px;
       color: #f0f0f0;
       font-style: italic;
-      margin: 25px 0 10px;
+      margin: 30px 0 10px;
     }
 
     audio {
@@ -109,10 +109,10 @@
     }
 
     @media screen and (max-width: 480px) {
-      h1 { font-size: clamp(26px, 8vw, 40px); }
-      .valor { font-size: 36px; }
-      .btn { font-size: 18px; padding: 14px; }
-      p.discreto { font-size: 12px; }
+      h1 { font-size: 50px; }
+      .valor { font-size: 44px; }
+      .btn { font-size: 20px; padding: 18px; }
+      p.discreto { font-size: 13px; }
     }
   </style>
 </head>
