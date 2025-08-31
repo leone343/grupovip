@@ -25,17 +25,19 @@
 
     h1 {
       font-family: 'Poppins', sans-serif;
-      font-size: 75px; /* tamanho um pouco maior */
-      color: #ff0066; /* mesma cor dos botões */
-      margin-bottom: 50px;
       font-weight: 900;
-      white-space: nowrap; /* mantém tudo em uma linha */
+      color: #ff0066;
       letter-spacing: 2px;
+      white-space: nowrap;
+      max-width: 100%;
+      font-size: clamp(36px, 8vw, 72px); /* tamanho ajustável conforme a tela */
+      margin: 0 auto 50px;
       text-shadow: 
         0 0 5px #ff004c,
         0 0 10px #ff004c,
         0 0 20px #ff004c,
         0 0 40px #ff004c;
+      overflow: hidden;
     }
 
     .valor {
@@ -92,7 +94,6 @@
     audio { display: none; }
 
     @media screen and (max-width: 480px) {
-      h1 { font-size: 46px; }
       .valor { font-size: 44px; }
       .btn { font-size: 20px; padding: 18px; }
       p.discreto { font-size: 13px; }
