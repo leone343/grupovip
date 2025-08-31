@@ -6,15 +6,24 @@
   <title>Conteúdo Exclusivo</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@700;900&display=swap" rel="stylesheet" />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       background: linear-gradient(270deg, #1a001a, #0f0026, #001a1a, #1a0f00);
       background-size: 800% 800%;
       animation: slowRGB 30s ease infinite;
       font-family: 'Inter', sans-serif;
       color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
       text-align: center;
-      padding: 40px 20px;
+      padding: 20px;
     }
 
     @keyframes slowRGB {
@@ -23,39 +32,41 @@
       100% { background-position: 0% 50%; }
     }
 
+    .container {
+      max-width: 600px;
+      width: 100%;
+    }
+
     h1 {
       font-family: 'Poppins', sans-serif;
       font-weight: 900;
       color: #ff0066;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       white-space: nowrap;
-      max-width: 100%;
-      font-size: clamp(36px, 8vw, 72px); /* tamanho ajustável conforme a tela */
-      margin: 0 auto 50px;
-      text-shadow: 
+      font-size: clamp(34px, 7vw, 60px);
+      margin-bottom: 40px;
+      text-shadow:
+        0 0 2px #ff004c,
         0 0 5px #ff004c,
-        0 0 10px #ff004c,
-        0 0 20px #ff004c,
-        0 0 40px #ff004c;
-      overflow: hidden;
+        0 0 10px rgba(255, 0, 76, 0.4);
     }
 
     .valor {
-      font-size: 60px;
+      font-size: 48px;
       font-weight: 800;
       color: #00ffcc;
-      margin: 10px 0 40px;
+      margin: 10px 0 30px;
       animation: pulse 1.5s infinite;
     }
 
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
+      50% { transform: scale(1.05); }
     }
 
     .pix-box {
       font-size: 22px;
-      margin: 15px 0;
+      margin: 10px 0;
       word-break: break-all;
     }
 
@@ -64,19 +75,21 @@
       background-color: #ff0066;
       color: #fff;
       border: none;
-      padding: 20px 40px;
-      font-size: 22px;
+      padding: 16px 32px;
+      font-size: 20px;
       border-radius: 14px;
       cursor: pointer;
       font-weight: bold;
       text-decoration: none;
-      margin: 20px auto;
+      margin: 18px auto;
       width: 100%;
-      max-width: 460px;
+      max-width: 400px;
       transition: background-color 0.3s;
     }
 
-    .btn:hover { background-color: #e6005c; }
+    .btn:hover {
+      background-color: #e6005c;
+    }
 
     .copy-status {
       margin-top: 10px;
@@ -85,38 +98,43 @@
     }
 
     p.discreto {
-      font-size: 15px;
+      font-size: 14px;
       color: #f0f0f0;
       font-style: italic;
-      margin: 30px 0 10px;
+      margin: 25px 0 10px;
     }
 
-    audio { display: none; }
+    audio {
+      display: none;
+    }
 
     @media screen and (max-width: 480px) {
-      .valor { font-size: 44px; }
-      .btn { font-size: 20px; padding: 18px; }
-      p.discreto { font-size: 13px; }
+      h1 { font-size: clamp(26px, 8vw, 40px); }
+      .valor { font-size: 36px; }
+      .btn { font-size: 18px; padding: 14px; }
+      p.discreto { font-size: 12px; }
     }
   </style>
 </head>
 <body>
 
-  <h1>Conteúdo Exclusivo</h1>
+  <div class="container">
+    <h1>Conteúdo Exclusivo</h1>
 
-  <div class="valor">R$ 2,00</div>
+    <div class="valor">R$ 2,00</div>
 
-  <p>Chave Pix:</p>
-  <div class="pix-box" id="pixKey">pagamentovip10@gmail.com</div>
+    <p>Chave Pix:</p>
+    <div class="pix-box" id="pixKey">pagamentovip10@gmail.com</div>
 
-  <button class="btn" onclick="copyPix()">📋 Copiar Chave Pix</button>
-  <div id="copyStatus" class="copy-status"></div>
+    <button class="btn" onclick="copyPix()">📋 Copiar Chave Pix</button>
+    <div id="copyStatus" class="copy-status"></div>
 
-  <p class="discreto">Após o pagamento, envie o comprovante usando o botão abaixo</p>
+    <p class="discreto">Após o pagamento, envie o comprovante usando o botão abaixo</p>
 
-  <a class="btn" href="https://t.me/assine_aqui" target="_blank" onclick="playSound()">📩 Enviar Comprovante</a>
+    <a class="btn" href="https://t.me/assine_aqui" target="_blank" onclick="playSound()">📩 Enviar Comprovante</a>
 
-  <audio id="clickSound" src="https://assets.mixkit.co/active_storage/sfx/2476/2476-preview.mp3"></audio>
+    <audio id="clickSound" src="https://assets.mixkit.co/active_storage/sfx/2476/2476-preview.mp3"></audio>
+  </div>
 
   <script>
     function playSound() {
