@@ -34,9 +34,12 @@
 
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 68px; /* AUMENTEI O TAMANHO DO GRUPO VIP */
+      font-size: 68px; /* Tamanho maior */
       color: #ff0066;
-      text-shadow: 0 0 6px rgba(255, 0, 100, 0.4);
+      text-shadow: 
+        0 0 6px rgba(255, 0, 102, 0.5), 
+        0 0 12px rgba(255, 0, 102, 0.3), 
+        0 0 20px rgba(255, 0, 102, 0.2);
       margin-bottom: 30px;
       white-space: nowrap;
     }
@@ -95,7 +98,7 @@
     audio { display: none; }
 
     @media screen and (max-width: 480px) {
-      h1 { font-size: 48px; } /* AUMENTEI NO CELULAR TAMBÉM */
+      h1 { font-size: 48px; } /* Ajustei para celular também */
       .valor { font-size: 44px; }
       .btn { font-size: 20px; padding: 16px; }
       p.discreto { font-size: 13px; }
