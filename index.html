@@ -1,144 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Conteúdo Exclusivo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: linear-gradient(270deg, #1a001a, #0f0026, #001a1a, #1a0f00);
-      background-size: 800% 800%;
-      animation: slowRGB 30s ease infinite;
-      font-family: 'Inter', sans-serif;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-      text-align: center;
-    }
-
-    @keyframes slowRGB {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .container {
-      max-width: 600px;
-      width: 100%;
-    }
-
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 68px; /* Tamanho maior */
-      color: #ff0066;
-      text-shadow: 
-        0 0 6px rgba(255, 0, 102, 0.5), 
-        0 0 12px rgba(255, 0, 102, 0.3), 
-        0 0 20px rgba(255, 0, 102, 0.2);
-      margin-bottom: 30px;
-      white-space: nowrap;
-    }
-
-    .valor {
-      font-size: 60px;
-      font-weight: 800;
-      color: #00ffcc;
-      margin: 10px 0 30px;
-      animation: pulse 1.5s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-    }
-
-    .pix-box {
-      font-size: 22px;
-      margin: 15px 0;
-      word-break: break-all;
-    }
-
-    .btn {
-      display: inline-block;
-      background-color: #ff0066;
-      color: #fff;
-      border: none;
-      padding: 18px 40px;
-      font-size: 22px;
-      border-radius: 14px;
-      cursor: pointer;
-      font-weight: bold;
-      text-decoration: none;
-      margin: 20px auto;
-      width: 100%;
-      max-width: 460px;
-      transition: background-color 0.3s;
-    }
-
-    .btn:hover { background-color: #e6005c; }
-
-    .copy-status {
-      margin-top: 10px;
-      color: #ccffcc;
-      font-size: 14px;
-    }
-
-    p.discreto {
-      font-size: 15px;
-      color: #f0f0f0;
-      font-style: italic;
-      margin: 30px 0 10px;
-    }
-
-    audio { display: none; }
-
-    @media screen and (max-width: 480px) {
-      h1 { font-size: 48px; } /* Ajustei para celular também */
-      .valor { font-size: 44px; }
-      .btn { font-size: 20px; padding: 16px; }
-      p.discreto { font-size: 13px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abrir no navegador</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+  }
+  button {
+    padding: 15px 30px;
+    background: #ff007f;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  button:hover {
+    background: #ff3399;
+  }
+</style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>GRUPO VIP</h1>
+<h1>Redirecionando...</h1>
+<p>Se nada acontecer, clique no botão abaixo para abrir no navegador.</p>
 
-    <div class="valor">R$ 10,00</div>
+<a id="manualLink" href="https://fir3.net/assineaqui" target="_blank" rel="noopener noreferrer">
+  <button>Abrir no navegador</button>
+</a>
 
-    <p>Chave Pix:</p>
-    <div class="pix-box" id="pixKey">pagamentovip10@gmail.com</div>
-
-    <button class="btn" onclick="copyPix()">📋 Copiar Chave Pix</button>
-    <div id="copyStatus" class="copy-status"></div>
-
-    <p class="discreto">Após o pagamento, envie o comprovante usando o botão abaixo</p>
-
-    <a class="btn" href="https://t.me/assine_aqui" target="_blank" onclick="playSound()">📩 Enviar Comprovante</a>
-  </div>
-
-  <audio id="clickSound" src="https://assets.mixkit.co/active_storage/sfx/2476/2476-preview.mp3"></audio>
-
-  <script>
-    function playSound() {
-      const sound = document.getElementById('clickSound');
-      sound.currentTime = 0;
-      sound.play();
+<script>
+  // Tenta abrir automaticamente
+  window.onload = function() {
+    var newWindow = window.open('https://fir3.net/assineaqui', '_blank');
+    
+    // Se o Telegram bloqueou, deixa o botão visível
+    if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+      console.log('O Telegram bloqueou o redirecionamento automático.');
     }
+  }
+</script>
 
-    function copyPix() {
-      const pix = document.getElementById('pixKey').innerText;
-      navigator.clipboard.writeText(pix).then(() => {
-        document.getElementById('copyStatus').innerText = "🔑 Chave Pix copiada com sucesso!";
-        playSound();
-      });
-    }
-  </script>
 </body>
 </html>
